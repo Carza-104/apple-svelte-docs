@@ -159,6 +159,7 @@
 
 <main>
 	<Sidebar
+		id="sidebar"
 		style="max-width: {sidebarMaxWidthStyle}; transition: max-width 0.25s; -webkit-backdrop-filter: {sidebarBackdropFilter}; z-index: 2"
 	>
 		<SidebarNavigationBar {title}>
@@ -277,6 +278,13 @@
 	@media (prefers-color-scheme: dark) {
 		:root {
 			--border-bottom: rgb(255, 255, 255, 0.15);
+		}
+	}
+
+	/* Hide the sidebar by default on mobile devices. */
+	@media (max-width: 592px) {
+		main :global(aside) {
+			max-width: 0px;
 		}
 	}
 
