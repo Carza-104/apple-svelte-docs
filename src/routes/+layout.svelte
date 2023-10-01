@@ -288,7 +288,7 @@
 
 	/* Hide the sidebar by default on mobile devices. */
 	@media (max-width: 592px) {
-		main :global(aside) {
+		main :global(#sidebar) {
 			max-width: 0px;
 		}
 	}
