@@ -30,7 +30,6 @@
 
 		if (windowWidth <= 592) {
 			sidebarButtonState = 'disabled';
-			sidebarMaxWidthStyle = '0px';
 		}
 	}
 
@@ -252,33 +251,31 @@
 		</div>
 		<slot />
 		<!-- Show the tab bar on mobile devices. -->
-		{#if windowWidth <= 592}
-			<!-- Make the tab bar take up space in the document-flow. -->
-			<div class="document-flow-tab-bar" />
-			<div class="tab-bar">
-				<!-- Automatically render each tab bar button. -->
-				{#each sidebarAboutSectionItems as sidebarSectionItem}
-					{#if sidebarSectionItem.title === title}
-						<TabBarButton
-							state="selected"
-							symbol={sidebarSectionItem.symbol}
-							label={sidebarSectionItem.title}
-						/>
-					{:else}
-						<TabBarButton
-							symbol={sidebarSectionItem.symbol}
-							label={sidebarSectionItem.title}
-							onPress={() => redirect(sidebarSectionItem.redirect)}
-						/>
-					{/if}
-				{/each}
-				{#if title === 'Components'}
-					<TabBarButton state="selected" symbol="stack" label="Components" />
+		<!-- Make the tab bar take up space in the document-flow. -->
+		<div class="document-flow-tab-bar" />
+		<div class="tab-bar">
+			<!-- Automatically render each tab bar button. -->
+			{#each sidebarAboutSectionItems as sidebarSectionItem}
+				{#if sidebarSectionItem.title === title}
+					<TabBarButton
+						state="selected"
+						symbol={sidebarSectionItem.symbol}
+						label={sidebarSectionItem.title}
+					/>
 				{:else}
-					<TabBarButton symbol="stack" label="Components" onPress={() => redirect('/components')} />
+					<TabBarButton
+						symbol={sidebarSectionItem.symbol}
+						label={sidebarSectionItem.title}
+						onPress={() => redirect(sidebarSectionItem.redirect)}
+					/>
 				{/if}
-			</div>
-		{/if}
+			{/each}
+			{#if title === 'Components'}
+				<TabBarButton state="selected" symbol="stack" label="Components" />
+			{:else}
+				<TabBarButton symbol="stack" label="Components" onPress={() => redirect('/components')} />
+			{/if}
+		</div>
 	</div>
 </main>
 
@@ -369,6 +366,16 @@
 		position: fixed;
 		-webkit-backdrop-filter: blur(25px);
 		width: calc(100% - 32px);
+	}
+
+	@media (min-width: 593px) {
+		.document-flow-tab-bar {
+			display: none;
+		}
+
+		.tab-bar {
+			display: none;
+		}
 	}
 
 	@media (prefers-color-scheme: dark) {
