@@ -87,11 +87,9 @@
 	<Code {code} />
 {:else}
 	<div class="table-container">
+		<code class="title3-emphasized">TabBar</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>TabBar</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -106,11 +104,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">TabBarButton</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>TabBarButton</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>

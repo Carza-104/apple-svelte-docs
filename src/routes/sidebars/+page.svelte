@@ -420,11 +420,9 @@
 	<Code {code} />
 {:else}
 	<div class="table-container">
+		<code class="title3-emphasized">Sidebar</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>Sidebar</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -439,11 +437,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarNavigationBar</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarNavigationBar</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -458,11 +454,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarNavigationBarLeading</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarNavigationBarLeading</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -477,11 +471,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarNavigationBarTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarNavigationBarTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -496,11 +488,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarSection</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarSection</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -515,11 +505,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarSectionAddItemButton</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarSectionAddItemButton</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -534,11 +522,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SidebarSectionItem</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SidebarSectionItem</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>

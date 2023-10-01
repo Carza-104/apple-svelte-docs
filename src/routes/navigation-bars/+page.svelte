@@ -228,11 +228,9 @@
 	<Code {code} />
 {:else}
 	<div class="table-container">
+		<code class="title3-emphasized">NavigationBar</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>NavigationBar</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -247,11 +245,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">NavigationBarLeading</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>NavigationBarLeading</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -266,11 +262,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">NavigationBarSearchField</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>NavigationBarSearchField</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -285,11 +279,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">NavigationBarTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>NavigationBarTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>

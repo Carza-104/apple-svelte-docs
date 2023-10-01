@@ -587,11 +587,9 @@
 	<Code {code} />
 {:else}
 	<div class="table-container">
+		<code class="title3-emphasized">List</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>List</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -606,11 +604,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListButtonRow</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListButtonRow</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -625,11 +621,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRow</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRow</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -644,11 +638,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowButtonTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowButtonTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -663,11 +655,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowDefaultTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowDefaultTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -682,11 +672,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowDisclosureTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowDisclosureTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -701,11 +689,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowImage</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowImage</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -720,11 +706,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowStepperTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowStepperTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -739,11 +723,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListRowToggleTrailing</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListRowToggleTrailing</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -758,11 +740,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">ListTextFieldRow</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>ListTextFieldRow</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>

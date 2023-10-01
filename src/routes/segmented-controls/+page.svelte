@@ -80,11 +80,9 @@
 	<Code {code} />
 {:else}
 	<div class="table-container">
+		<code class="title3-emphasized">SegmentedControl</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SegmentedControl</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
@@ -99,11 +97,9 @@
 				{/each}
 			</table>
 		</div>
+		<code class="title3-emphasized">SegmentedControlButton</code>
 		<div class="table">
 			<table>
-				<tr class="title3-emphasized">
-					<td><code>SegmentedControlButton</code> props</td>
-				</tr>
 				<tr class="headline">
 					<td>Name</td>
 					<td>Type</td>
