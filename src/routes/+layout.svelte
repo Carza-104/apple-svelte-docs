@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import {
+		ListRowImage,
 		NavigationBarTrailing,
 		Sidebar,
 		SidebarNavigationBar,
@@ -242,6 +243,10 @@
 			</div>
 			<h1>{title}</h1>
 		</div>
+		<div class="banner">
+			<ListRowImage type="symbol" symbol="report" />
+			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
+		</div>
 		<slot />
 		<!-- Show the tab bar on mobile devices. -->
 		{#if windowWidth <= 592}
@@ -327,6 +332,15 @@
 		font-weight: 700;
 		line-height: 41px;
 		margin: 3px 16px 8px;
+	}
+
+	.banner {
+		align-items: center;
+		background: var(--bg-grouped-secondary);
+		border-radius: 10px;
+		display: flex;
+		gap: 12px;
+		padding: 11px 16px;
 	}
 
 	.document-flow-tab-bar {
