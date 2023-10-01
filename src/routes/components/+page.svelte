@@ -1,33 +1,48 @@
 <script>
-	import {
-		Button,
-		Collection,
-		List,
-		ListRow,
-		ListRowButtonTrailing,
-		ListRowDefaultTrailing,
-		ListRowDisclosureTrailing,
-		ListRowImage,
-		ListRowStepperTrailing,
-		ListRowToggleTrailing,
-		NavigationBar,
-		NavigationBarLeading,
-		NavigationBarSearchField,
-		NavigationBarTrailing,
-		SegmentedControl,
-		SegmentedControlButton,
-		Sidebar,
-		SidebarNavigationBar,
-		SidebarNavigationBarLeading,
-		SidebarNavigationBarTrailing,
-		SidebarSection,
-		SidebarSectionAddItemButton,
-		SidebarSectionItem,
-		TabBar,
-		TabBarButton,
-		Toolbar,
-		ToolbarButton
-	} from 'apple-svelte';
+	import { List, ListRow, ListRowDefaultTrailing, ListRowImage } from 'apple-svelte';
+
+	let listRowItems = [
+		{
+			title: 'Buttons',
+			symbol: 'touch_app',
+			redirect: '/buttons'
+		},
+		{
+			title: 'Collections',
+			symbol: 'grid_view',
+			redirect: '/collections'
+		},
+		{
+			title: 'Lists',
+			symbol: 'table_rows',
+			redirect: '/lists'
+		},
+		{
+			title: 'Navigation Bars',
+			symbol: 'crop_16_9',
+			redirect: '/navigation-bars'
+		},
+		{
+			title: 'Segmented Controls',
+			symbol: 'view_column',
+			redirect: '/segmented-controls'
+		},
+		{
+			title: 'Sidebars',
+			symbol: 'thumbnail_bar',
+			redirect: '/sidebars'
+		},
+		{
+			title: 'Tab Bars',
+			symbol: 'crop_16_9',
+			redirect: '/tab-bars'
+		},
+		{
+			title: 'Toolbars',
+			symbol: 'crop_16_9',
+			redirect: '/toolbars'
+		}
+	];
 
 	function redirect(url) {
 		if (url.startsWith('http://') || url.startsWith('https://')) {
@@ -36,94 +51,29 @@
 			window.location.href = url;
 		}
 	}
+
+	let windowWidth = undefined;
+
+	$: {
+		if (windowWidth > 592) {
+			redirect('/');
+		}
+	}
 </script>
 
-<Collection>
-	<div>
-		<List showHeader headerType="prominent" header="Buttons" onPress={() => redirect('/buttons')} />
-		<Button type="filled" style="margin-top: -24px" />
-	</div>
-	<List
-		showHeader
-		headerType="prominent"
-		header="Collections"
-		onPress={() => redirect('/collections')}
-	/>
-	<List showHeader headerType="prominent" header="Lists" onPress={() => redirect('/lists')}>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowButtonTrailing slot="trailing" />
+<svelte:window bind:innerWidth={windowWidth} />
+
+<List>
+	{#each listRowItems as listRowItem}
+		<ListRow title={listRowItem.title}>
+			<ListRowImage slot="image" type="symbol" symbol={listRowItem.symbol} />
+			<ListRowDefaultTrailing
+				slot="trailing"
+				showDisclosure
+				onDisclosurePress={() => {
+					redirect(listRowItem.redirect);
+				}}
+			/>
 		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowDefaultTrailing slot="trailing" showDisclosure />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowDisclosureTrailing slot="trailing" />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowStepperTrailing slot="trailing" />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowToggleTrailing slot="trailing" />
-		</ListRow>
-	</List>
-	<List
-		showHeader
-		headerType="prominent"
-		header="Navigation Bars"
-		onPress={() => redirect('/navigation-bars')}
-	>
-		<NavigationBar showBackground size="large" style="border-bottom: unset !important">
-			<NavigationBarLeading slot="leading" />
-			<NavigationBarTrailing slot="trailing-1" />
-			<NavigationBarTrailing slot="trailing-2" />
-			<NavigationBarTrailing slot="trailing-3" />
-			<NavigationBarSearchField slot="search-field" />
-		</NavigationBar>
-	</List>
-	<div>
-		<List
-			showHeader
-			headerType="prominent"
-			header="Segmented Controls"
-			onPress={() => redirect('/segmented-controls')}
-		/>
-		<SegmentedControl style="margin-top: -24px">
-			<SegmentedControlButton />
-			<SegmentedControlButton />
-			<SegmentedControlButton />
-		</SegmentedControl>
-	</div>
-	<List showHeader headerType="prominent" header="Sidebars" onPress={() => redirect('/sidebars')}>
-		<Sidebar style="background: var(--materials-regular); position: unset">
-			<SidebarNavigationBar>
-				<SidebarNavigationBarLeading slot="leading" />
-				<SidebarNavigationBarTrailing slot="trailing" />
-			</SidebarNavigationBar>
-			<SidebarSection>
-				<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
-				<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
-				<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
-				<SidebarSectionAddItemButton />
-			</SidebarSection>
-		</Sidebar>
-	</List>
-	<List showHeader headerType="prominent" header="Tab Bars" onPress={() => redirect('/tab-bars')}>
-		<TabBar style="position: unset">
-			<TabBarButton slot="button-1" inputGroup="preview-tab-bar" />
-			<TabBarButton slot="button-2" inputGroup="preview-tab-bar" />
-			<TabBarButton slot="button-3" inputGroup="preview-tab-bar" />
-		</TabBar>
-	</List>
-	<List showHeader headerType="prominent" header="Toolbars" onPress={() => redirect('/toolbars')}>
-		<Toolbar style="position: unset">
-			<ToolbarButton />
-			<ToolbarButton />
-			<ToolbarButton />
-		</Toolbar>
-	</List>
-</Collection>
+	{/each}
+</List>

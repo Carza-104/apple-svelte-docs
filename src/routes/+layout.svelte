@@ -91,45 +91,48 @@
 			title: 'Symbols',
 			symbol: 'star',
 			redirect: '/symbols'
-		},
-		{
-			title: 'Components',
-			symbol: 'stack',
-			redirect: '/components'
 		}
 	];
 
 	let sidebarComponentsSectionItems = [
 		{
 			title: 'Buttons',
+			symbol: 'touch_app',
 			redirect: '/buttons'
 		},
 		{
 			title: 'Collections',
+			symbol: 'grid_view',
 			redirect: '/collections'
 		},
 		{
 			title: 'Lists',
+			symbol: 'table_rows',
 			redirect: '/lists'
 		},
 		{
 			title: 'Navigation Bars',
+			symbol: 'crop_16_9',
 			redirect: '/navigation-bars'
 		},
 		{
 			title: 'Segmented Controls',
+			symbol: 'view_column',
 			redirect: '/segmented-controls'
 		},
 		{
 			title: 'Sidebars',
+			symbol: 'thumbnail_bar',
 			redirect: '/sidebars'
 		},
 		{
 			title: 'Tab Bars',
+			symbol: 'crop_16_9',
 			redirect: '/tab-bars'
 		},
 		{
 			title: 'Toolbars',
+			symbol: 'crop_16_9',
 			redirect: '/toolbars'
 		}
 	];
@@ -210,14 +213,14 @@
 						state="selected-secondary"
 						title={sidebarSectionItem.title}
 						showImage
-						imageType="collection"
+						symbol={sidebarSectionItem.symbol}
 						style="white-space: nowrap"
 					/>
 				{:else}
 					<SidebarSectionItem
 						title={sidebarSectionItem.title}
 						showImage
-						imageType="collection"
+						symbol={sidebarSectionItem.symbol}
 						onPress={() => redirect(sidebarSectionItem.redirect)}
 						style="white-space: nowrap"
 					/>
@@ -269,6 +272,11 @@
 						/>
 					{/if}
 				{/each}
+				{#if title === 'Components'}
+					<TabBarButton state="selected" symbol="stack" label="Components" />
+				{:else}
+					<TabBarButton symbol="stack" label="Components" onPress={() => redirect('/components')} />
+				{/if}
 			</div>
 		{/if}
 	</div>
