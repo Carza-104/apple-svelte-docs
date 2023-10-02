@@ -30,6 +30,7 @@
 
 		if (windowWidth <= 592) {
 			sidebarButtonState = 'disabled';
+			sidebarMaxWidthStyle = '0px';
 		}
 	}
 
@@ -151,6 +152,8 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 	/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-title" content="apple-svelte" />
 	<meta
 		name="description"
 		content="apple-svelte is a component library based on Apple's Human Interface design language."
