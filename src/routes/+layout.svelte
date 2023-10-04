@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import {
 		ListRowImage,
@@ -11,6 +12,13 @@
 		TabBarButton
 	} from 'apple-svelte';
 	import './styles.css';
+
+	let usesWebKit = false;
+	onMount(() => {
+		if (navigator.userAgent.includes('WebKit')) {
+			usesWebKit = true;
+		}
+	});
 
 	let sidebarButtonState = undefined;
 	let sidebarMaxWidthStyle = undefined;
@@ -47,7 +55,7 @@
 	let sidebarBackdropFilter = 'blur(50px)';
 
 	$: {
-		if (windowWidth <= 809 && windowWidth > 592 && sidebarMaxWidthStyle === '320px') {
+		if (usesWebKit && windowWidth <= 809 && windowWidth > 592 && sidebarMaxWidthStyle === '320px') {
 			setInterval(() => {
 				sidebarBackdropFilter = 'unset';
 				setTimeout(() => {
