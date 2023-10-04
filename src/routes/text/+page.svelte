@@ -73,7 +73,6 @@
 
 	table {
 		border-collapse: collapse;
-		white-space: pre;
 		width: 100%;
 	}
 
