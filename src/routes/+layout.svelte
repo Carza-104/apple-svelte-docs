@@ -61,7 +61,7 @@
 				setTimeout(() => {
 					sidebarBackdropFilter = 'blur(50px)';
 				}, 0);
-			}, 0);
+			}, 1);
 		}
 	}
 
