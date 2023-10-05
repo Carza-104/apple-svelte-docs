@@ -294,6 +294,8 @@
 <style>
 	:root {
 		color-scheme: light dark;
+		--colors-accent: var(--colors-indigo);
+		--colors-accent-2: var(--colors-indigo-2);
 		--border-bottom: rgb(0, 0, 0, 0.3);
 	}
 
