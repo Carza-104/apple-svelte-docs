@@ -103,7 +103,12 @@
 		}
 	];
 
-	let sidebarComponentsSectionItems = [
+	export let sidebarComponentsSectionItems = [
+		{
+			title: 'Action Sheets',
+			symbol: 'crop_5_4',
+			redirect: '/action-sheets'
+		},
 		{
 			title: 'Buttons',
 			symbol: 'touch_app',
