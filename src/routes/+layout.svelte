@@ -14,6 +14,7 @@
 	import './styles.css';
 
 	let usesWebKit = false;
+
 	onMount(() => {
 		if (navigator.userAgent.includes('WebKit')) {
 			usesWebKit = true;
