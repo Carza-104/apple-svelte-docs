@@ -10,4 +10,4 @@ export let code = `<script>
     />
 </svelte:head>
 
-<Button type="filled" />`;
+<Button type="bezeled" />`;
