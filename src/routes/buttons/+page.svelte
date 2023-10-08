@@ -79,7 +79,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<Button type="bezeled" />
+	<Button size="medium" type="bezeled" />
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
