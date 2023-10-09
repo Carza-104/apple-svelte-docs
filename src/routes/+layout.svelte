@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import {
 		ListRowImage,
+		NavigationBarLeading,
 		NavigationBarTrailing,
 		Sidebar,
 		SidebarNavigationBar,
@@ -254,8 +255,10 @@
 		{/if}
 		<div class="navigation-bar">
 			<div class="title-and-controls">
-				<!-- Hide or show the sidebar button depending on the window's width. -->
-				{#if sidebarButtonState === 'enabled'}
+				<!-- Hide or show the sidebar button depending on the window's width. Show the Back button on mobile devices when the current page is about components. -->
+				{#if windowWidth <= 592 && sidebarComponentsSectionItems.some((item) => item.title === title)}
+					<NavigationBarLeading label="Components" onPress={() => redirect('/components')} />
+				{:else if sidebarButtonState === 'enabled'}
 					<NavigationBarTrailing symbol="thumbnail_bar" onPress={onSidebarPress} />
 				{:else}
 					<NavigationBarTrailing state="disabled" symbol="thumbnail_bar" />
