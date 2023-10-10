@@ -94,6 +94,12 @@
 	];
 
 	let panel = 'preview';
+
+	let inputElement = undefined;
+
+	function handlePress() {
+		inputElement.blur();
+	}
 </script>
 
 <p>Action sheets are modal views that offer multiple choices.</p>
@@ -114,7 +120,7 @@
 			<ActionSheetButton state="destructive" />
 			<ActionSheetButton state="disabled" />
 		</div>
-		<button class="cancel">
+		<button bind:this={inputElement} class="cancel" on:click={handlePress}>
 			<p class="body-emphasized">Cancel</p>
 		</button>
 	</div>
