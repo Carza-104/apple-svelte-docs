@@ -34,7 +34,7 @@
 	}
 
 	.field {
-		overflow: scroll;
+		overflow-x: scroll;
 		padding: 11px 16px;
 	}
 

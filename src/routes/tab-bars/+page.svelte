@@ -134,7 +134,7 @@
 	.table {
 		background: var(--bg-grouped-secondary);
 		border-radius: 10px;
-		overflow: scroll;
+		overflow-x: scroll;
 	}
 
 	table {
