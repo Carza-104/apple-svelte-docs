@@ -1,21 +1,25 @@
 .attr-name {
-	color: var(--colors-purple);
+	color: var(--colors-blue);
 }
 
 .attr-value {
 	color: var(--colors-indigo);
 }
 
+.comment {
+	color: var(--labels-secondary);
+}
+
 .function {
-	color: var(--colors-blue);
+	color: var(--colors-purple);
 }
 
 .keyword {
-	color: var(--colors-cyan);
+	color: var(--colors-pink);
 }
 
 .property {
-	color: var(--colors-teal);
+	color: var(--colors-brown);
 }
 
 .punctuation {
@@ -23,13 +27,13 @@
 }
 
 .selector {
-	color: var(--colors-mint);
+	color: var(--colors-blue);
 }
 
 .string {
-	color: var(--colors-purple);
+	color: var(--colors-indigo);
 }
 
 .tag {
-	color: var(--colors-mint);
+	color: var(--colors-purple);
 }
