@@ -1,0 +1,35 @@
+.attr-name {
+	color: var(--colors-purple);
+}
+
+.attr-value {
+	color: var(--colors-indigo);
+}
+
+.function {
+	color: var(--colors-blue);
+}
+
+.keyword {
+	color: var(--colors-cyan);
+}
+
+.property {
+	color: var(--colors-teal);
+}
+
+.punctuation {
+	color: var(--labels-primary);
+}
+
+.selector {
+	color: var(--colors-mint);
+}
+
+.string {
+	color: var(--colors-purple);
+}
+
+.tag {
+	color: var(--colors-mint);
+}
