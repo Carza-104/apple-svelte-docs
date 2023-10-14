@@ -181,6 +181,9 @@
 		content="apple-svelte is a component library based on Apple's Human Interface design language."
 	/>
 	<title>{title} | apple-svelte</title>
+
+	<!-- Google Search Console: -->
+	<meta name="google-site-verification" content="_gjhL2PbvDHezhcXeGbB890fQRspfel7GfH__TwX7hE" />
 </svelte:head>
 
 <svelte:window bind:innerWidth={windowWidth} />
