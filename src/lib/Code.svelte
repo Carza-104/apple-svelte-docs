@@ -1,5 +1,6 @@
 <script>
 	import { ListRow, ListRowDefaultTrailing } from 'apple-svelte';
+	import Prism from 'prismjs';
 
 	export let title = '+page.svelte';
 	export let code = 'npm i apple-svelte';
@@ -22,7 +23,7 @@
 		<ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
 	</ListRow>
 	<div class="field">
-		<code class="body">{code}</code>
+		<code class="body">{@html Prism.highlight(code, Prism.languages.markup, 'markup')}</code>
 	</div>
 </div>
 

@@ -12,6 +12,7 @@
 		SidebarSectionItem,
 		TabBarButton
 	} from 'apple-svelte';
+	import './code.css';
 	import './styles.css';
 
 	let usesWebKit = false;
