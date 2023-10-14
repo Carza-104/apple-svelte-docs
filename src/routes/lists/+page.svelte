@@ -517,6 +517,12 @@
 
 	let listTextFieldRowProps = [
 		{
+			name: 'value',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: 'undefined'
+		},
+		{
 			name: 'title',
 			description: 'Insert description here.',
 			type: 'String',

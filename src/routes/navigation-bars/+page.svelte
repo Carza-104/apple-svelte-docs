@@ -90,6 +90,12 @@
 
 	let navigationBarSearchFieldProps = [
 		{
+			name: 'value',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: 'undefined'
+		},
+		{
 			name: 'slot',
 			description: 'Insert description here.',
 			type: 'String',
