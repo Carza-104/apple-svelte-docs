@@ -127,6 +127,7 @@
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
+<!-- Use custom HTML instead of the actual component because I don't want the modal view. -->
 {#if panel === 'preview'}
 	<div class="action-sheet">
 		<div class="buttons">

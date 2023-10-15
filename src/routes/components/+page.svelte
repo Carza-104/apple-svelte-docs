@@ -1,4 +1,5 @@
 <script>
+	/* This page is only visible on mobile devices since you can select components from the sidebar on bigger screens. */
 	import { List, ListRow, ListRowDefaultTrailing, ListRowImage } from 'apple-svelte';
 
 	let listRowItems = [

@@ -224,6 +224,7 @@
 				<button class="hidden-input" on:click={onSidebarPress} />
 			</label>
 		{/if}
+		<!-- Use custom HTML instead of the actual component since you can't conditionally render slots. -->
 		<div class="navigation-bar">
 			<div class="title-and-controls">
 				<!-- Hide or show the sidebar button depending on the window's width. Show the Back button on mobile devices when the current page is about components. -->
@@ -245,6 +246,7 @@
 		<!-- Show the tab bar on mobile devices. -->
 		<!-- Make the tab bar take up space in the document-flow. -->
 		<div class="document-flow-tab-bar" />
+		<!-- Use custom HTML instead of the actual component since you can't conditionally render slots. -->
 		<div class="tab-bar">
 			<!-- Automatically render each tab bar button. -->
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
