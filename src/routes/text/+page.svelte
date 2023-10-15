@@ -6,7 +6,7 @@
 	let elementClass = 'default';
 
 	onMount(() => {
-		if (navigator.userAgent.includes('Windows')) {
+		if (navigator.userAgent.includes('Win')) {
 			elementClass = 'windows';
 		}
 	});
