@@ -315,7 +315,7 @@
 	.table {
 		background: var(--bg-grouped-secondary);
 		border-radius: 10px;
-		overflow-x: scroll;
+		overflow-x: auto;
 	}
 
 	table {
