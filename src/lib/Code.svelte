@@ -39,6 +39,10 @@
 		padding: 11px 16px;
 	}
 
+	.field::-webkit-scrollbar {
+		display: none;
+	}
+
 	code {
 		white-space: pre;
 	}

@@ -71,6 +71,10 @@
 		overflow-x: auto;
 	}
 
+	.table::-webkit-scrollbar {
+		display: none;
+	}
+
 	table {
 		border-collapse: collapse;
 		width: 100%;

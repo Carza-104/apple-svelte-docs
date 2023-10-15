@@ -239,6 +239,10 @@
 		overflow-x: auto;
 	}
 
+	.table::-webkit-scrollbar {
+		display: none;
+	}
+
 	table {
 		border-collapse: collapse;
 		white-space: pre;
