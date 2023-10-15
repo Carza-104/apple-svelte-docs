@@ -10,6 +10,14 @@
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
+
 	let navigationBarProps = [
 		{
 			name: 'showBackground',
@@ -235,7 +243,7 @@
 {:else}
 	<div class="table-container">
 		<code class="title3-emphasized">NavigationBar</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -252,7 +260,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">NavigationBarLeading</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -269,7 +277,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">NavigationBarSearchField</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -286,7 +294,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">NavigationBarTrailing</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -318,7 +326,7 @@
 		overflow-x: auto;
 	}
 
-	.table::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 

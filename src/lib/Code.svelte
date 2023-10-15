@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import { ListRow, ListRowDefaultTrailing } from 'apple-svelte';
 	import Prism from 'prismjs';
 
@@ -16,13 +17,21 @@
 			symbol = 'stack';
 		}, 1000);
 	}
+
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
 </script>
 
 <div class="code" {id} {style}>
 	<ListRow {title} style="color: var(--labels-secondary)">
 		<ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
 	</ListRow>
-	<div class="field">
+	<div class="field {elementClass}">
 		<code class="body">{@html Prism.highlight(code, Prism.languages.markup, 'markup')}</code>
 	</div>
 </div>
@@ -39,7 +48,7 @@
 		padding: 11px 16px;
 	}
 
-	.field::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 

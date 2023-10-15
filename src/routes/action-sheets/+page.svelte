@@ -1,7 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
 	import { ActionSheetButton, SegmentedControl, SegmentedControlButton } from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
+
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
 
 	let actionSheetProps = [
 		{
@@ -138,7 +147,7 @@
 {:else}
 	<div class="table-container">
 		<code class="title3-emphasized">ActionSheet</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -155,7 +164,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">ActionSheetButton</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -239,7 +248,7 @@
 		overflow-x: auto;
 	}
 
-	.table::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 

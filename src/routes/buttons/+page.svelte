@@ -1,7 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
 	import { Button, SegmentedControl, SegmentedControlButton } from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
+
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
 
 	let props = [
 		{
@@ -83,7 +92,7 @@
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
-	<div class="table">
+	<div class="table {elementClass}">
 		<table>
 			<tr class="headline">
 				<td>Name</td>
@@ -108,7 +117,7 @@
 		overflow-x: auto;
 	}
 
-	.table::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 

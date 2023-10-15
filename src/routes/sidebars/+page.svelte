@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import {
 		SegmentedControl,
 		SegmentedControlButton,
@@ -12,6 +13,14 @@
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
+
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
 
 	let sidebarProps = [
 		{
@@ -430,7 +439,7 @@
 {:else}
 	<div class="table-container">
 		<code class="title3-emphasized">Sidebar</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -447,7 +456,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarNavigationBar</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -464,7 +473,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarNavigationBarLeading</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -481,7 +490,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarNavigationBarTrailing</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -498,7 +507,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarSection</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -515,7 +524,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarSectionAddItemButton</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -532,7 +541,7 @@
 			</table>
 		</div>
 		<code class="title3-emphasized">SidebarSectionItem</code>
-		<div class="table">
+		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
 					<td>Name</td>
@@ -575,7 +584,7 @@
 		overflow-x: auto;
 	}
 
-	.table::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 

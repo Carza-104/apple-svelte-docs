@@ -1,6 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
+
+	let elementClass = 'default';
+
+	onMount(() => {
+		if (navigator.userAgent.includes('Windows')) {
+			elementClass = 'windows';
+		}
+	});
 
 	let text = [
 		{ name: 'Large title', code: 'large-title' },
@@ -49,7 +58,7 @@
 	If you're using a third-party font, make sure to include it in your HTML head. Below is a list of
 	classes you can set text in your project to.
 </p>
-<div class="table">
+<div class="table {elementClass}">
 	<table>
 		<tr class="headline">
 			<td>Name</td>
@@ -71,7 +80,7 @@
 		overflow-x: auto;
 	}
 
-	.table::-webkit-scrollbar {
+	#windows::-webkit-scrollbar {
 		display: none;
 	}
 
