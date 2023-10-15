@@ -54,7 +54,6 @@
 	can edit the <code>--sans-serif-font-family</code> and <code>--monospace-font-family</code> variables.
 </p>
 <Code {code} />
-{elementClass}
 <p>
 	If you're using a third-party font, make sure to include it in your HTML head. Below is a list of
 	classes you can set text in your project to.
