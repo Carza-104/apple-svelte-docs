@@ -4,7 +4,6 @@
 	import { inject } from '@vercel/analytics';
 	inject({ mode: dev ? 'development' : 'production' });
 
-	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import {
 		ListRowImage,
@@ -20,56 +19,24 @@
 	import './code.css';
 	import './styles.css';
 
-	let usesWebKit = false;
-
-	onMount(() => {
-		if (navigator.userAgent.includes('WebKit')) {
-			usesWebKit = true;
-		}
-	});
-
+	let sidebarState = undefined;
 	let sidebarButtonState = undefined;
-	let sidebarMaxWidthStyle = undefined;
 	let windowWidth = undefined;
-
-	/* Hide or show the sidebar by default based on the window's width. */
-	$: {
-		if (windowWidth > 809) {
-			sidebarButtonState = 'enabled';
-			sidebarMaxWidthStyle = '320px';
-		}
-
-		if (windowWidth > 592 && windowWidth <= 809) {
-			sidebarButtonState = 'enabled';
-			sidebarMaxWidthStyle = '0px';
-		}
-
-		if (windowWidth <= 592) {
-			sidebarButtonState = 'disabled';
-			sidebarMaxWidthStyle = '0px';
-		}
-	}
 
 	/* Hide or show the sidebar when the button is pressed. */
 	function onSidebarPress() {
-		if (sidebarMaxWidthStyle === '320px') {
-			sidebarMaxWidthStyle = '0px';
+		if (sidebarState === 'default') {
+			sidebarState = 'hidden';
 		} else {
-			sidebarMaxWidthStyle = '320px';
+			sidebarState = 'default';
 		}
 	}
 
-	/* This fixes a WebKit issue that causes the backdrop filter for the sidebar to disappear. */
-	let sidebarBackdropFilter = 'blur(50px)';
-
 	$: {
-		if (usesWebKit && windowWidth <= 809 && windowWidth > 592 && sidebarMaxWidthStyle === '320px') {
-			setInterval(() => {
-				sidebarBackdropFilter = 'unset';
-				setTimeout(() => {
-					sidebarBackdropFilter = 'blur(50px)';
-				}, 0);
-			}, 1);
+		if (windowWidth > 592) {
+			sidebarButtonState = 'enabled';
+		} else {
+			sidebarButtonState = 'disabled';
 		}
 	}
 
@@ -189,10 +156,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <main>
-	<Sidebar
-		id="sidebar"
-		style="max-width: {sidebarMaxWidthStyle}; transition: max-width 0.25s; -webkit-backdrop-filter: {sidebarBackdropFilter}; z-index: 2"
-	>
+	<Sidebar bind:state={sidebarState} id="sidebar">
 		<SidebarNavigationBar {title}>
 			<SidebarNavigationBarLeading slot="leading" symbol="thumbnail_bar" onPress={onSidebarPress} />
 		</SidebarNavigationBar>
@@ -257,7 +221,7 @@
 	</Sidebar>
 	<div class="main">
 		<!-- Let the user close the sidebar by pressing outside it on smaller displays. -->
-		{#if windowWidth <= 809 && windowWidth > 592 && sidebarMaxWidthStyle === '320px'}
+		{#if windowWidth <= 809 && windowWidth > 592 && sidebarState === 'default'}
 			<label>
 				<button class="hidden-input" on:click={onSidebarPress} />
 			</label>
