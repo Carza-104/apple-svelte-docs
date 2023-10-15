@@ -299,6 +299,10 @@
 		padding: 24px 16px;
 	}
 
+	.main::-webkit-scrollbar {
+		display: none;
+	}
+
 	label {
 		cursor: unset;
 		height: 100vh;
