@@ -205,7 +205,6 @@
 						title={sidebarSectionItem.title}
 						showImage
 						symbol={sidebarSectionItem.symbol}
-						style="white-space: nowrap"
 					/>
 				{:else}
 					<SidebarSectionItem
@@ -213,7 +212,6 @@
 						showImage
 						symbol={sidebarSectionItem.symbol}
 						onPress={() => redirect(sidebarSectionItem.redirect)}
-						style="white-space: nowrap"
 					/>
 				{/if}
 			{/each}
