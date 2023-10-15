@@ -584,7 +584,7 @@
 		overflow-x: auto;
 	}
 
-	#windows::-webkit-scrollbar {
+	.windows::-webkit-scrollbar {
 		display: none;
 	}
 

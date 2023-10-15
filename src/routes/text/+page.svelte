@@ -6,7 +6,7 @@
 	let elementClass = 'default';
 
 	onMount(() => {
-		if (navigator.userAgent.includes('Win')) {
+		if (navigator.userAgent.includes('WebKit')) {
 			elementClass = 'windows';
 		}
 	});
@@ -54,6 +54,7 @@
 	can edit the <code>--sans-serif-font-family</code> and <code>--monospace-font-family</code> variables.
 </p>
 <Code {code} />
+{elementClass}
 <p>
 	If you're using a third-party font, make sure to include it in your HTML head. Below is a list of
 	classes you can set text in your project to.
@@ -80,7 +81,7 @@
 		overflow-x: auto;
 	}
 
-	#windows::-webkit-scrollbar {
+	.windows::-webkit-scrollbar {
 		display: none;
 	}
 

@@ -146,7 +146,7 @@
 		overflow-x: auto;
 	}
 
-	#webkit::-webkit-scrollbar {
+	.webkit::-webkit-scrollbar {
 		display: none;
 	}
 

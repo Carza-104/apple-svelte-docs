@@ -48,7 +48,7 @@
 		padding: 11px 16px;
 	}
 
-	#windows::-webkit-scrollbar {
+	.windows::-webkit-scrollbar {
 		display: none;
 	}
 
