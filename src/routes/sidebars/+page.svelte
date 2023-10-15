@@ -15,6 +15,12 @@
 
 	let sidebarProps = [
 		{
+			name: 'state',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hidden"'
+		},
+		{
 			name: 'id',
 			description: 'Insert description here.',
 			type: 'String',
@@ -382,6 +388,11 @@
 <p>If you can, avoid using sidebars on mobile devices.</p>
 <p>
 	If you use a sidebar component, you'll also need to include logic to hide or show it dynamically.
+	You can simply bind the <code>state</code> prop to a variable to better control when the sidebar
+	is shown. Check out
+	<a href="https://github.com/Carza-104/apple-svelte-docs/blob/main/src/routes/+layout.svelte"
+		>GitHub</a
+	> to see how this is implemented.
 </p>
 <p>
 	To actually make sidebar section items work you can have them redirect the user to a separate page
@@ -402,9 +413,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<Sidebar
-		style="background: var(--materials-regular); border-radius: 10px 0px 0px 10px; position: unset; z-index: 0"
-	>
+	<aside>
 		<SidebarNavigationBar>
 			<SidebarNavigationBarLeading slot="leading" />
 			<SidebarNavigationBarTrailing slot="trailing" />
@@ -415,7 +424,7 @@
 			<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
 			<SidebarSectionAddItemButton />
 		</SidebarSection>
-	</Sidebar>
+	</aside>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
@@ -543,6 +552,17 @@
 {/if}
 
 <style>
+	aside {
+		backdrop-filter: blur(50px);
+		background: var(--materials-regular);
+		background-blend-mode: var(--materials-background-blend-mode);
+		border-radius: 10px 0px 0px 10px;
+		box-shadow: 0.5px 0px rgb(60, 60, 67, 0.36);
+		height: 100vh;
+		max-width: 320px;
+		-webkit-backdrop-filter: blur(50px);
+	}
+
 	.table-container {
 		display: flex;
 		flex-direction: column;
