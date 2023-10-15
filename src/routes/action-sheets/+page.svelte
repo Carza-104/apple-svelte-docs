@@ -5,6 +5,12 @@
 
 	let actionSheetProps = [
 		{
+			name: 'state',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hidden"'
+		},
+		{
 			name: 'showHeader',
 			description: 'Insert description here.',
 			type: 'Boolean',
@@ -103,7 +109,10 @@
 </script>
 
 <p>Action sheets are modal views that offer multiple choices.</p>
-<p>You can set the action sheet's <code>onCancelPress</code> prop to close it when pressed.</p>
+<p>
+	You can bind the action sheet's <code>state</code> prop to a variable to better control when the component
+	is shown.
+</p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
