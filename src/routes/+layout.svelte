@@ -149,6 +149,9 @@
 	/>
 	<title>{title} | apple-svelte</title>
 
+	<!-- Bing Webmaster Tools: -->
+	<meta name="msvalidate.01" content="1A6D67EAF90B63FBB367A65A9985F3B6" />
+
 	<!-- Google Search Console: -->
 	<meta name="google-site-verification" content="_gjhL2PbvDHezhcXeGbB890fQRspfel7GfH__TwX7hE" />
 </svelte:head>
