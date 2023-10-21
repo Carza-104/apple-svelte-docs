@@ -9,6 +9,11 @@
 			redirect: '/action-sheets'
 		},
 		{
+			title: 'Alerts',
+			symbol: 'crop_5_4',
+			redirect: '/alerts'
+		},
+		{
 			title: 'Buttons',
 			symbol: 'touch_app',
 			redirect: '/buttons'
@@ -27,6 +32,11 @@
 			title: 'Navigation Bars',
 			symbol: 'crop_16_9',
 			redirect: '/navigation-bars'
+		},
+		{
+			title: 'Progress Indicators',
+			symbol: 'refresh',
+			redirect: '/progress-indicators'
 		},
 		{
 			title: 'Segmented Controls',
