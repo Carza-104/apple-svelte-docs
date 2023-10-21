@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import {
 		List,
+		ListButtonRow,
 		ListRow,
 		ListRowButtonTrailing,
 		ListRowDefaultTrailing,
@@ -9,6 +10,8 @@
 		ListRowImage,
 		ListRowStepperTrailing,
 		ListRowToggleTrailing,
+		ListSliderRow,
+		ListTextFieldRow,
 		SegmentedControl,
 		SegmentedControlButton
 	} from 'apple-svelte';
@@ -524,6 +527,57 @@
 		}
 	];
 
+	let listSliderRowProps = [
+		{
+			name: 'value',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: 'undefined'
+		},
+		{
+			name: 'min',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"0"'
+		},
+		{
+			name: 'max',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"0"'
+		},
+		{
+			name: 'showSymbols',
+			description: 'Insert description here.',
+			type: 'Boolean',
+			defaultValues: 'false\ntrue'
+		},
+		{
+			name: 'minSymbol',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"wb_sunny"'
+		},
+		{
+			name: 'maxSymbol',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"sunny"'
+		},
+		{
+			name: 'id',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: 'undefined'
+		},
+		{
+			name: 'style',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: 'undefined'
+		}
+	];
+
 	let listTextFieldRowProps = [
 		{
 			name: 'value',
@@ -597,6 +651,9 @@
 			<ListRowImage slot="image" type="symbol" />
 			<ListRowToggleTrailing slot="trailing" />
 		</ListRow>
+		<ListButtonRow />
+		<ListSliderRow />
+		<ListTextFieldRow />
 	</List>
 {:else if panel === 'code'}
 	<Code {code} />
@@ -747,6 +804,23 @@
 					<td>Default values</td>
 				</tr>
 				{#each listRowToggleTrailingProps as prop}
+					<tr>
+						<td><code>{prop.name}</code></td>
+						<td>{prop.type}</td>
+						<td><code>{prop.defaultValues}</code></td>
+					</tr>
+				{/each}
+			</table>
+		</div>
+		<code class="title3-emphasized">ListSliderRow</code>
+		<div class="table {elementClass}">
+			<table>
+				<tr class="headline">
+					<td>Name</td>
+					<td>Type</td>
+					<td>Default values</td>
+				</tr>
+				{#each listSliderRowProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>

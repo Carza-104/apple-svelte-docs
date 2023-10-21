@@ -40,4 +40,7 @@ export let code = `<script>
         <ListRowImage slot="image" type="symbol" />
         <ListRowToggleTrailing slot="trailing" />
     </ListRow>
+    <ListButtonRow />
+    <ListSliderRow />
+    <ListTextFieldRow />
 </List>`;
