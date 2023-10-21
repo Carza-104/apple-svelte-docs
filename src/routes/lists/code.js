@@ -41,6 +41,6 @@ export let code = `<script>
         <ListRowToggleTrailing slot="trailing" />
     </ListRow>
     <ListButtonRow />
-    <ListSliderRow />
+    <ListSliderRow showSymbols />
     <ListTextFieldRow />
 </List>`;

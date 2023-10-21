@@ -652,7 +652,7 @@
 			<ListRowToggleTrailing slot="trailing" />
 		</ListRow>
 		<ListButtonRow />
-		<ListSliderRow />
+		<ListSliderRow showSymbols />
 		<ListTextFieldRow />
 	</List>
 {:else if panel === 'code'}
