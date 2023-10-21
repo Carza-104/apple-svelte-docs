@@ -109,6 +109,11 @@
 			redirect: '/navigation-bars'
 		},
 		{
+			title: 'Progress Indicators',
+			symbol: 'refresh',
+			redirect: '/progress-indicators'
+		},
+		{
 			title: 'Segmented Controls',
 			symbol: 'view_column',
 			redirect: '/segmented-controls'
