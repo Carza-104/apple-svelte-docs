@@ -109,7 +109,7 @@
 			redirect: '/navigation-bars'
 		},
 		{
-			title: 'Progress Indicator Components',
+			title: 'Progress Indicators',
 			symbol: 'refresh',
 			redirect: '/progress-indicators'
 		},
