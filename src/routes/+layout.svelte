@@ -84,6 +84,11 @@
 			redirect: '/action-sheets'
 		},
 		{
+			title: 'Alerts',
+			symbol: 'crop_5_4',
+			redirect: '/alerts'
+		},
+		{
 			title: 'Buttons',
 			symbol: 'touch_app',
 			redirect: '/buttons'
