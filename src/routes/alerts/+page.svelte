@@ -143,10 +143,8 @@
 </script>
 
 <p>
-	If you want your navigation bar component to stick to the top of the screen, you can set its <code
-		>style</code
-	>
-	prop to <code>"position: sticky; top: 0px"</code>.
+	Alert components give users critical information (for example, warning them about their action)
+	right away.
 </p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
@@ -156,8 +154,8 @@
 {#if panel === 'preview'}
 	<div class="alert">
 		<div class="title-and-description">
-			<p class="headline">Title</p>
-			<p class="footnote">A message should be a short, complete sentence.</p>
+			<p class="headline alert-text">Title</p>
+			<p class="footnote alert-text">A message should be a short, complete sentence.</p>
 			<AlertTextField />
 		</div>
 		<div class="buttons">
@@ -247,7 +245,7 @@
 		padding: 19px 16px 15px;
 	}
 
-	p {
+	.alert-text {
 		text-align: center;
 	}
 
