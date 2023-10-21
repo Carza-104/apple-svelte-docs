@@ -109,6 +109,11 @@
 			redirect: '/navigation-bars'
 		},
 		{
+			title: 'Page Controls',
+			symbol: 'more_horiz',
+			redirect: '/page-controls'
+		},
+		{
 			title: 'Progress Indicators',
 			symbol: 'refresh',
 			redirect: '/progress-indicators'
