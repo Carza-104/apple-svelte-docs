@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { SegmentedControl, SegmentedControlButton } from 'apple-svelte';
+	import { List, ListRow, SegmentedControl, SegmentedControlButton } from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -67,6 +67,8 @@
 	];
 
 	let panel = 'preview';
+
+	let state = 1;
 </script>
 
 <p>Segmented controls provide mutually exclusive buttons to switch between views.</p>
@@ -81,10 +83,24 @@
 </SegmentedControl>
 {#if panel === 'preview'}
 	<SegmentedControl>
-		<SegmentedControlButton inputGroup="preview-segmented-control" />
-		<SegmentedControlButton inputGroup="preview-segmented-control" />
-		<SegmentedControlButton inputGroup="preview-segmented-control" />
+		<SegmentedControlButton inputGroup="preview" state="selected" onPress={() => (state = 1)} />
+		<SegmentedControlButton inputGroup="preview" onPress={() => (state = 2)} />
+		<SegmentedControlButton inputGroup="preview" onPress={() => (state = 3)} />
 	</SegmentedControl>
+
+	{#if state === 1}
+		<List>
+			<ListRow title="First page" />
+		</List>
+	{:else if state === 2}
+		<List>
+			<ListRow title="Second page" />
+		</List>
+	{:else}
+		<List>
+			<ListRow title="Third page" />
+		</List>
+	{/if}
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
