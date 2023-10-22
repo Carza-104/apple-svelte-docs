@@ -1,6 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
-	import { SegmentedControl, SegmentedControlButton } from 'apple-svelte';
+	import {
+		Collection,
+		List,
+		ListRow,
+		ListRowImage,
+		ListRowToggleTrailing,
+		SegmentedControl,
+		SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -27,16 +35,40 @@
 		}
 	];
 
-	let panel = 'code';
+	let panel = 'preview';
 </script>
 
 <p>Collections are simple layout components that work best when wrapped around multiple lists.</p>
 <p>On smaller screens, collections automatically switch from a grid layout to a row one.</p>
 <SegmentedControl>
-	<SegmentedControlButton state="selected" label="Code" onPress={() => (panel = 'code')} />
+	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
-{#if panel === 'code'}
+{#if panel === 'preview'}
+	<Collection>
+		<List showHeader showFooter>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowToggleTrailing slot="trailing" showAccentColor state="default" />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowToggleTrailing slot="trailing" showAccentColor />
+			</ListRow>
+		</List>
+		<List showHeader showFooter>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowToggleTrailing slot="trailing" state="default" />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowToggleTrailing slot="trailing" />
+			</ListRow>
+		</List>
+	</Collection>
+{:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table {elementClass}">
