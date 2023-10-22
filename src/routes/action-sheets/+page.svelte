@@ -1,6 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-	import { ActionSheetButton, SegmentedControl, SegmentedControlButton } from 'apple-svelte';
+	import {
+		ActionSheet,
+		ActionSheetButton,
+		Button,
+		SegmentedControl,
+		SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -110,11 +116,7 @@
 
 	let panel = 'preview';
 
-	let inputElement = undefined;
-
-	function handlePress() {
-		inputElement.blur();
-	}
+	let state = 'hidden';
 </script>
 
 <p>Action sheets are modal views that offer multiple choices.</p>
@@ -127,22 +129,19 @@
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
-<!-- Use custom HTML instead of the actual component because I don't want the modal view. -->
 {#if panel === 'preview'}
-	<div class="action-sheet">
-		<div class="buttons">
-			<div class="header">
-				<p class="footnote-emphasized">Header Title</p>
-				<p class="footnote">A message should be a short, complete sentence.</p>
-			</div>
-			<ActionSheetButton />
-			<ActionSheetButton state="destructive" />
-			<ActionSheetButton state="disabled" />
-		</div>
-		<button bind:this={inputElement} class="cancel" on:click={handlePress}>
-			<p class="body-emphasized">Cancel</p>
-		</button>
-	</div>
+	<Button
+		type="bezeled"
+		symbol="visibility"
+		label="Show action sheet"
+		onPress={() => (state = 'default')}
+	/>
+
+	<ActionSheet bind:state showHeader showDescription showCancelButton>
+		<ActionSheetButton />
+		<ActionSheetButton />
+		<ActionSheetButton />
+	</ActionSheet>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
@@ -278,11 +277,5 @@
 
 	tr:last-child td {
 		border-bottom: unset;
-	}
-
-	button:active,
-	button:focus {
-		background: linear-gradient(var(--press-overlay) 0%, var(--press-overlay)),
-			var(--materials-regular);
 	}
 </style>

@@ -1,17 +1,26 @@
 export let code = `<script>
-    import { ActionSheet, ActionSheetButton } from 'apple-svelte';
+	import { ActionSheet, ActionSheetButton, Button } from 'apple-svelte';
+	let state = 'hidden';
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="node_modules/apple-svelte/dist/styles.css" />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+	<link rel="stylesheet" href="node_modules/apple-svelte/dist/styles.css" />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+	/>
 </svelte:head>
 
-<ActionSheet showHeader showDescription showCancelButton>
-    <ActionSheetButton />
-    <ActionSheetButton state="destructive" />
-    <ActionSheetButton state="disabled" />
-</ActionSheet>`;
+<Button
+	type="bezeled"
+	symbol="visibility"
+	label="Show action sheet"
+	onPress={() => (state = 'default')}
+/>
+
+<ActionSheet bind:state showHeader showDescription showCancelButton>
+	<ActionSheetButton />
+	<ActionSheetButton />
+	<ActionSheetButton />
+</ActionSheet>
+`;
