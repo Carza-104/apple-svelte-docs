@@ -448,12 +448,17 @@
 			<SidebarNavigationBarTrailing slot="trailing" />
 		</SidebarNavigationBar>
 		<SidebarSection showHeading heading="Home">
-			<SidebarSectionItem showImage showTrailingSymbol />
+			<SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
 			<SidebarSectionItem showImage showDisclosure>
 				<SidebarSectionItem indentLevel="1" showImage showDisclosure>
 					<SidebarSectionItem indentLevel="2" showImage showDisclosure>
 						<SidebarSectionItem indentLevel="3" showImage showDisclosure>
-							<SidebarSectionItem indentLevel="4" showImage showTrailingSymbol />
+							<SidebarSectionItem
+								inputGroup="preview"
+								indentLevel="4"
+								showImage
+								showTrailingSymbol
+							/>
 						</SidebarSectionItem>
 					</SidebarSectionItem>
 				</SidebarSectionItem>
