@@ -184,58 +184,6 @@
 {/if}
 
 <style>
-	.action-sheet {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		gap: 8px;
-		max-width: 377px;
-	}
-
-	.buttons {
-		border-radius: 14px;
-		overflow: hidden;
-	}
-
-	.buttons :first-child {
-		border-top: unset;
-	}
-
-	.header {
-		align-items: center;
-		backdrop-filter: blur(40px);
-		background: var(--materials-regular);
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		padding: 12px 16px 12.5px;
-		-webkit-backdrop-filter: blur(40px);
-	}
-
-	.footnote-emphasized {
-		color: var(--labels-secondary);
-	}
-
-	.footnote {
-		color: var(--labels-secondary);
-	}
-
-	.cancel {
-		align-items: center;
-		border-radius: 14px;
-		backdrop-filter: blur(40px);
-		background: var(--materials-regular);
-		display: flex;
-		height: 56px;
-		justify-content: center;
-		-webkit-backdrop-filter: blur(40px);
-	}
-
-	.body-emphasized {
-		color: var(--colors-accent);
-		width: 56px;
-	}
-
 	.table-container {
 		display: flex;
 		flex-direction: column;
