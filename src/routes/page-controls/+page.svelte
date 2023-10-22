@@ -156,32 +156,6 @@
 {/if}
 
 <style>
-	.alert {
-		backdrop-filter: blur(40px);
-		background: var(--materials-regular);
-		border-radius: 14px;
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		gap: 2px;
-		justify-content: center;
-		max-width: 270px;
-		overflow: hidden;
-		-webkit-backdrop-filter: blur(40px);
-	}
-
-	.title-and-description {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		gap: 2px;
-		padding: 19px 16px 15px;
-	}
-
-	.alert-text {
-		text-align: center;
-	}
-
 	.table-container {
 		display: flex;
 		flex-direction: column;
