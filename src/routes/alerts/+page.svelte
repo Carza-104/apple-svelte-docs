@@ -3,6 +3,7 @@
 	import {
 		Alert,
 		AlertButton,
+		AlertTextField,
 		Button,
 		SegmentedControl,
 		SegmentedControlButton
@@ -158,6 +159,7 @@
 	/>
 
 	<Alert bind:state showDescription>
+		<AlertTextField slot="text-field" />
 		<AlertButton slot="button-1" state="preferred" />
 		<AlertButton slot="button-2" />
 		<AlertButton slot="button-3" />

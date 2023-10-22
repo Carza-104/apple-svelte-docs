@@ -14,6 +14,7 @@ export let code = `<script>
 <Button type="bezeled" symbol="visibility" label="Show alert" onPress={() => (state = 'default')} />
 
 <Alert bind:state showDescription>
+	<AlertTextField slot="text-field" />
 	<AlertButton slot="button-1" state="preferred" />
 	<AlertButton slot="button-2" />
 	<AlertButton slot="button-3" />
