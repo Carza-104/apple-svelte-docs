@@ -86,7 +86,7 @@
 
 	let panel = 'preview';
 
-	let displayStyle = 'none';
+	let state = 'hidden';
 </script>
 
 <p>Progress indicators let users know that your project is loading content.</p>
@@ -100,11 +100,11 @@
 		type="bezeled"
 		symbol="visibility"
 		label="Show progress indicators"
-		onPress={() => (displayStyle = 'flex')}
+		onPress={() => (state = 'default')}
 	/>
 
-	<RegularProgressIndicator showLabel style="display: {displayStyle}" />
-	<SmallProgressIndicator showLabel style="display: {displayStyle}" />
+	<RegularProgressIndicator bind:state showLabel />
+	<SmallProgressIndicator bind:state showLabel />
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}

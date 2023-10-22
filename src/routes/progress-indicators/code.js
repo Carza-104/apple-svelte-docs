@@ -1,6 +1,6 @@
 export let code = `<script>
 	import { Button, RegularProgressIndicator, SmallProgressIndicator } from 'apple-svelte';
-	let displayStyle = 'none';
+	let state = 'hidden';
 </script>
 
 <svelte:head>
@@ -15,9 +15,9 @@ export let code = `<script>
 	type="bezeled"
 	symbol="visibility"
 	label="Show progress indicators"
-	onPress={() => (displayStyle = 'flex')}
+	onPress={() => (state = 'default')}
 />
 
-<RegularProgressIndicator showLabel style="display: {displayStyle}" />
-<SmallProgressIndicator showLabel style="display: {displayStyle}" />
+<RegularProgressIndicator bind:state showLabel />
+<SmallProgressIndicator bind:state showLabel />
 `;
