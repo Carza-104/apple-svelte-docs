@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
+		Collection,
 		List,
 		ListButtonRow,
 		ListRow,
@@ -618,6 +619,9 @@
 	];
 
 	let panel = 'preview';
+
+	let sliderValue = undefined;
+	let textFieldValue = undefined;
 </script>
 
 <p>
@@ -630,31 +634,37 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<List showHeader showFooter>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowButtonTrailing slot="trailing" />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowDisclosureTrailing slot="trailing" />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowStepperTrailing slot="trailing" />
-		</ListRow>
-		<ListRow>
-			<ListRowImage slot="image" type="symbol" />
-			<ListRowToggleTrailing slot="trailing" />
-		</ListRow>
-		<ListButtonRow />
-		<ListSliderRow showSymbols />
-		<ListTextFieldRow />
-	</List>
+	<Collection>
+		<List showHeader showFooter>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowButtonTrailing slot="trailing" />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowDisclosureTrailing slot="trailing" />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowStepperTrailing slot="trailing" />
+			</ListRow>
+			<ListRow>
+				<ListRowImage slot="image" type="symbol" />
+				<ListRowToggleTrailing slot="trailing" />
+			</ListRow>
+		</List>
+		<List showHeader showFooter>
+			<ListButtonRow />
+			<ListRow title="Slider value: {sliderValue}" />
+			<ListSliderRow bind:value={sliderValue} showSymbols />
+			<ListRow title="Text field value: {textFieldValue}" />
+			<ListTextFieldRow bind:value={textFieldValue} />
+		</List>
+	</Collection>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
