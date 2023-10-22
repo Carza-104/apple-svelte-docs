@@ -88,9 +88,9 @@
 </SegmentedControl>
 {#if panel === 'preview'}
 	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton slot="button-1" inputGroup="preview-tab-bar" />
-		<TabBarButton slot="button-2" inputGroup="preview-tab-bar" />
-		<TabBarButton slot="button-3" inputGroup="preview-tab-bar" />
+		<TabBarButton slot="button-1" />
+		<TabBarButton slot="button-2" />
+		<TabBarButton slot="button-3" />
 	</TabBar>
 {:else if panel === 'code'}
 	<Code {code} />
