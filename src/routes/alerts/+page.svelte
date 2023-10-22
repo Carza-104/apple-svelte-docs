@@ -4,6 +4,7 @@
 		Alert,
 		AlertButton,
 		AlertTextField,
+		Button,
 		NavigationBar,
 		NavigationBarLeading,
 		NavigationBarSearchField,
@@ -140,6 +141,8 @@
 	];
 
 	let panel = 'preview';
+
+	export let state = 'hidden';
 </script>
 
 <p>
@@ -152,18 +155,18 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<div class="alert">
-		<div class="title-and-description">
-			<p class="headline alert-text">Title</p>
-			<p class="footnote alert-text">A message should be a short, complete sentence.</p>
-			<AlertTextField />
-		</div>
-		<div class="buttons">
-			<AlertButton state="preferred" />
-			<AlertButton />
-			<AlertButton />
-		</div>
-	</div>
+	<Button
+		type="bezeled"
+		symbol="visibility"
+		label="Show alert"
+		onPress={() => (state = 'default')}
+	/>
+
+	<Alert bind:state showDescription>
+		<AlertButton slot="button-1" state="preferred" />
+		<AlertButton slot="button-2" />
+		<AlertButton slot="button-3" />
+	</Alert>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
