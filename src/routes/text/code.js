@@ -5,4 +5,5 @@ export let code = `<style>
         --monospace-font-family: ui-monospace, 'SF Mono', 'Roboto Mono', 'Fira Mono', 'Oxygen Mono',
             'Ubuntu Mono', 'Cascadia Code', Menlo, 'Noto Sans Mono', Consolas, monospace;
     }
-</style>`;
+</style>
+`;
