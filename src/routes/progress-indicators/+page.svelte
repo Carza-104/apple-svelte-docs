@@ -4,7 +4,8 @@
 		RegularProgressIndicator,
 		SmallProgressIndicator,
 		SegmentedControl,
-		SegmentedControlButton
+		SegmentedControlButton,
+		Button
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -72,6 +73,8 @@
 	];
 
 	let panel = 'preview';
+
+	let displayStyle = 'none';
 </script>
 
 <p>Progress indicators let users know that your project is loading content.</p>
@@ -81,7 +84,15 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<RegularProgressIndicator showLabel />
+	<Button
+		type="bezeled"
+		symbol="visibility"
+		label="Show progress indicators"
+		onPress={() => (displayStyle = 'flex')}
+	/>
+
+	<RegularProgressIndicator showLabel style="display: {displayStyle}" />
+	<SmallProgressIndicator showLabel style="display: {displayStyle}" />
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
