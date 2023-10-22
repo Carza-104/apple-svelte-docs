@@ -41,6 +41,7 @@
 		background: var(--bg-grouped-secondary);
 		border-radius: 10px;
 		overflow: hidden;
+		tab-size: 4;
 	}
 
 	.field {
