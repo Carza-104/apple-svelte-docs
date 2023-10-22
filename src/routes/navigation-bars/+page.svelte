@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
+		List,
+		ListRow,
 		NavigationBar,
 		NavigationBarLeading,
 		NavigationBarSearchField,
@@ -218,6 +220,8 @@
 	];
 
 	let panel = 'preview';
+
+	let value = undefined;
 </script>
 
 <p>
@@ -237,8 +241,12 @@
 		<NavigationBarTrailing slot="trailing-1" />
 		<NavigationBarTrailing slot="trailing-2" />
 		<NavigationBarTrailing slot="trailing-3" />
-		<NavigationBarSearchField slot="search-field" />
+		<NavigationBarSearchField slot="search-field" bind:value />
 	</NavigationBar>
+
+	<List>
+		<ListRow title="Search field value: {value}" />
+	</List>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
