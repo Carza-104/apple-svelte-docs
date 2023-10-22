@@ -4,6 +4,8 @@
 		Alert,
 		AlertButton,
 		AlertTextField,
+		List,
+		ListRow,
 		NavigationBar,
 		NavigationBarLeading,
 		NavigationBarSearchField,
@@ -79,6 +81,8 @@
 	];
 
 	let panel = 'preview';
+
+	let state = 1;
 </script>
 
 <p>
@@ -91,10 +95,24 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
+	{#if state === 1}
+		<List>
+			<ListRow title="First page" />
+		</List>
+	{:else if state === 2}
+		<List>
+			<ListRow title="Second page" />
+		</List>
+	{:else}
+		<List>
+			<ListRow title="Third page" />
+		</List>
+	{/if}
+
 	<PageControl showPlatter>
-		<PageControlButton state="selected" />
-		<PageControlButton />
-		<PageControlButton />
+		<PageControlButton state="selected" onPress={() => (state = 1)} />
+		<PageControlButton onPress={() => (state = 2)} />
+		<PageControlButton onPress={() => (state = 3)} />
 	</PageControl>
 {:else if panel === 'code'}
 	<Code {code} />
