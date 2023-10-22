@@ -1,5 +1,5 @@
 export let code = `<script>
-    import { Toolbar, ToolbarButton } from 'apple-svelte';
+	import { Toolbar, ToolbarButton } from 'apple-svelte';
 </script>
 
 <svelte:head>
@@ -11,8 +11,8 @@ export let code = `<script>
 </svelte:head>
 
 <Toolbar>
-    <ToolbarButton />
-    <ToolbarButton />
-    <ToolbarButton />
+	<ToolbarButton />
+	<ToolbarButton />
+	<ToolbarButton />
 </Toolbar>
 `;
