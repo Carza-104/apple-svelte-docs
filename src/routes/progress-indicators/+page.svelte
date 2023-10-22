@@ -20,6 +20,12 @@
 
 	let regularProgressIndicatorProps = [
 		{
+			name: 'state',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hidden"'
+		},
+		{
 			name: 'showLabel',
 			description: 'Insert description here.',
 			type: 'Boolean',
@@ -46,6 +52,12 @@
 	];
 
 	let smallProgressIndicatorProps = [
+		{
+			name: 'state',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hidden"'
+		},
 		{
 			name: 'showLabel',
 			description: 'Insert description here.',
