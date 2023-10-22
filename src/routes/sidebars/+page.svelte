@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
+		Button,
 		SegmentedControl,
 		SegmentedControlButton,
 		Sidebar,
@@ -392,6 +393,16 @@
 	];
 
 	let panel = 'preview';
+
+	let state = undefined;
+
+	function handlePress() {
+		if (state === 'default') {
+			state = 'hidden';
+		} else {
+			state = 'default';
+		}
+	}
 </script>
 
 <p>If you can, avoid using sidebars on mobile devices.</p>
@@ -422,18 +433,34 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
-	<aside>
+	{#if state === 'default'}
+		<Button type="bezeled" symbol="visibility" label="Hide sidebar" onPress={handlePress} />
+	{:else}
+		<Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
+	{/if}
+
+	<Sidebar
+		bind:state
+		style="position: unset; background: var(--materials-regular); border-radius: 10px; z-index: 0"
+	>
 		<SidebarNavigationBar>
 			<SidebarNavigationBarLeading slot="leading" />
 			<SidebarNavigationBarTrailing slot="trailing" />
 		</SidebarNavigationBar>
-		<SidebarSection>
-			<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
-			<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
-			<SidebarSectionItem showImage showTrailingSymbol inputGroup="preview-sidebar" />
+		<SidebarSection showHeading heading="Home">
+			<SidebarSectionItem showImage showTrailingSymbol />
+			<SidebarSectionItem showImage showDisclosure>
+				<SidebarSectionItem indentLevel="1" showImage showDisclosure>
+					<SidebarSectionItem indentLevel="2" showImage showDisclosure>
+						<SidebarSectionItem indentLevel="3" showImage showDisclosure>
+							<SidebarSectionItem indentLevel="4" showImage showTrailingSymbol />
+						</SidebarSectionItem>
+					</SidebarSectionItem>
+				</SidebarSectionItem>
+			</SidebarSectionItem>
 			<SidebarSectionAddItemButton />
 		</SidebarSection>
-	</aside>
+	</Sidebar>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
@@ -561,17 +588,6 @@
 {/if}
 
 <style>
-	aside {
-		backdrop-filter: blur(50px);
-		background: var(--materials-regular);
-		background-blend-mode: var(--materials-background-blend-mode);
-		border-radius: 10px 0px 0px 10px;
-		box-shadow: 0.5px 0px rgb(60, 60, 67, 0.36);
-		height: 100vh;
-		max-width: 320px;
-		-webkit-backdrop-filter: blur(50px);
-	}
-
 	.table-container {
 		display: flex;
 		flex-direction: column;

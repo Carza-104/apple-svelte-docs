@@ -1,32 +1,56 @@
 export let code = `<script>
-    import {
-        Sidebar,
-        SidebarNavigationBar,
-        SidebarNavigationBarLeading,
-        SidebarNavigationBarTrailing,
-        SidebarSection,
-        SidebarSectionAddItemButton,
-        SidebarSectionItem
-    } from 'apple-svelte';
+	import {
+		Button,
+		Sidebar,
+		SidebarNavigationBar,
+		SidebarNavigationBarLeading,
+		SidebarNavigationBarTrailing,
+		SidebarSection,
+		SidebarSectionAddItemButton,
+		SidebarSectionItem
+	} from 'apple-svelte';
+	let state = undefined;
+
+	function handlePress() {
+		if (state === 'default') {
+			state = 'hidden';
+		} else {
+			state = 'default';
+		}
+	}
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="node_modules/apple-svelte/dist/styles.css" />
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+	<link rel="stylesheet" href="node_modules/apple-svelte/dist/styles.css" />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+	/>
 </svelte:head>
 
-<Sidebar>
-    <SidebarNavigationBar>
-        <SidebarNavigationBarLeading slot="leading" />
-        <SidebarNavigationBarTrailing slot="trailing" />
-    </SidebarNavigationBar>
-    <SidebarSection>
-        <SidebarSectionItem showImage showTrailingSymbol />
-        <SidebarSectionItem showImage showTrailingSymbol />
-        <SidebarSectionItem showImage showTrailingSymbol />
-        <SidebarSectionAddItemButton />
-    </SidebarSection>
-</Sidebar>`;
+{#if state === 'default'}
+	<Button type="bezeled" symbol="visibility" label="Hide sidebar" onPress={handlePress} />
+{:else}
+	<Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
+{/if}
+
+<Sidebar bind:state>
+	<SidebarNavigationBar>
+		<SidebarNavigationBarLeading slot="leading" />
+		<SidebarNavigationBarTrailing slot="trailing" />
+	</SidebarNavigationBar>
+	<SidebarSection showHeading heading="Home">
+		<SidebarSectionItem showImage showTrailingSymbol />
+		<SidebarSectionItem showImage showDisclosure>
+			<SidebarSectionItem indentLevel="1" showImage showDisclosure>
+				<SidebarSectionItem indentLevel="2" showImage showDisclosure>
+					<SidebarSectionItem indentLevel="3" showImage showDisclosure>
+						<SidebarSectionItem indentLevel="4" showImage showTrailingSymbol />
+					</SidebarSectionItem>
+				</SidebarSectionItem>
+			</SidebarSectionItem>
+		</SidebarSectionItem>
+		<SidebarSectionAddItemButton />
+	</SidebarSection>
+</Sidebar>
+`;
