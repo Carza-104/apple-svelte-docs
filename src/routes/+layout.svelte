@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import {
 		ListRowImage,
+		NavigationBar,
 		NavigationBarLeading,
 		NavigationBarTrailing,
 		Sidebar,
@@ -236,32 +237,43 @@
 		</SidebarSection>
 	</Sidebar>
 	<div class="main">
-		<!-- Let the user close the sidebar by pressing outside it on smaller displays. -->
-		{#if windowWidth <= 809 && windowWidth > 592 && sidebarState === 'default'}
-			<label>
-				<button class="hidden-input" on:click={onSidebarPress} />
-			</label>
+		{#if windowWidth <= 592 && sidebarComponentsSectionItems.some((item) => item.title === title)}
+			<NavigationBar
+				showBackground
+				size="large"
+				{title}
+				style="margin: -24px -16px 0px; padding-top: 27px"
+			>
+				<NavigationBarLeading
+					slot="leading"
+					label="Components"
+					onPress={() => redirect('/components')}
+				/>
+			</NavigationBar>
+		{:else if sidebarButtonState === 'enabled'}
+			<NavigationBar
+				showBackground
+				size="large"
+				{title}
+				style="margin: -24px -16px 0px; padding-top: 27px"
+			>
+				<NavigationBarTrailing slot="leading" symbol="thumbnail_bar" onPress={onSidebarPress} />
+			</NavigationBar>
+		{:else}
+			<NavigationBar
+				showBackground
+				size="large"
+				{title}
+				style="margin: -24px -16px 0px; padding-top: 27px"
+			>
+				<NavigationBarTrailing slot="leading" state="disabled" symbol="thumbnail_bar" />
+			</NavigationBar>
 		{/if}
-		<!-- Use custom HTML instead of the actual component since you can't conditionally render slots. -->
-		<div class="navigation-bar">
-			<div class="title-and-controls">
-				<!-- Hide or show the sidebar button depending on the window's width. Show the Back button on mobile devices when the current page is about components. -->
-				{#if windowWidth <= 592 && sidebarComponentsSectionItems.some((item) => item.title === title)}
-					<NavigationBarLeading label="Components" onPress={() => redirect('/components')} />
-				{:else if sidebarButtonState === 'enabled'}
-					<NavigationBarTrailing symbol="thumbnail_bar" onPress={onSidebarPress} />
-				{:else}
-					<NavigationBarTrailing state="disabled" symbol="thumbnail_bar" />
-				{/if}
-			</div>
-			<h1>{title}</h1>
-		</div>
 		<div class="banner">
 			<ListRowImage type="symbol" symbol="report" />
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<!-- Show the tab bar on mobile devices. -->
 		<!-- Make the tab bar take up space in the document-flow. -->
 		<div class="document-flow-tab-bar" />
 		<!-- Use custom HTML instead of the actual component since you can't conditionally render slots. -->
@@ -317,40 +329,6 @@
 		flex-direction: column;
 		gap: 24px;
 		padding: 24px 16px;
-	}
-
-	label {
-		cursor: unset;
-		height: 100vh;
-		position: fixed;
-		width: 100vw;
-		z-index: 1;
-	}
-
-	.navigation-bar {
-		backdrop-filter: blur(25px);
-		background: var(--materials-chrome);
-		background-blend-mode: var(--materials-chrome-background-blend-mode);
-		border-bottom: 0.33px solid var(--border-bottom);
-		display: flex;
-		flex-direction: column;
-		margin: -24px -16px 0px;
-		padding-top: 27px;
-		-webkit-backdrop-filter: blur(25px);
-	}
-
-	.title-and-controls {
-		align-items: center;
-		display: flex;
-		justify-content: space-between;
-		padding: 11px 16px 11px 8px;
-	}
-
-	h1 {
-		font-size: 34px;
-		font-weight: 700;
-		line-height: 41px;
-		margin: 3px 16px 8px;
 	}
 
 	.banner {
