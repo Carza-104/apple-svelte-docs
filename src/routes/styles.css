@@ -251,7 +251,8 @@ label {
 /* Text styles: */
 
 h1,
-p {
+p,
+code {
 	user-select: text;
 	-webkit-user-select: text;
 }
