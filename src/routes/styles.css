@@ -196,11 +196,15 @@ a {
 }
 
 a:active {
-	opacity: var(--symbol-press-opacity);
+	opacity: var(--symbol-press-opacity) !important;
 }
 
 a:focus {
-	opacity: var(--symbol-press-opacity);
+	opacity: var(--symbol-press-opacity) !important;
+}
+
+a:hover {
+	opacity: var(--hover-opacity);
 }
 
 body {
