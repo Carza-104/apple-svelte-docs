@@ -54,6 +54,8 @@
 	}
 
 	code {
+		user-select: text;
+		-webkit-user-select: text;
 		white-space: pre;
 	}
 </style>
