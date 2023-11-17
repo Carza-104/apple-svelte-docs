@@ -193,13 +193,7 @@
 			defaultValues: '"open"\n"closed"'
 		},
 		{
-			name: 'openSymbol',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"keyboard_arrow_down"'
-		},
-		{
-			name: 'closedSymbol',
+			name: 'symbol',
 			description: 'Insert description here.',
 			type: 'String',
 			defaultValues: '"arrow_forward_ios"'
