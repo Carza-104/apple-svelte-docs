@@ -620,7 +620,7 @@
 
 	let panel = 'preview';
 
-	let sliderValue = undefined;
+	let sliderValue = 50;
 	let textFieldValue = undefined;
 </script>
 
