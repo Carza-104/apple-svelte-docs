@@ -151,6 +151,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
+	<hr />
 	<Button
 		type="bezeled"
 		symbol="visibility"
@@ -223,6 +224,13 @@
 {/if}
 
 <style>
+	hr {
+		background: var(--separators-non-opaque);
+		border: unset;
+		height: 0.5px;
+		margin: 0px -16px;
+	}
+
 	.table-container {
 		display: flex;
 		flex-direction: column;

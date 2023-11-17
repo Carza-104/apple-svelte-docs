@@ -88,6 +88,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
+	<hr />
 	<div class="horizontal">
 		<div class="vertical">
 			<Button symbol="stack" label="Button" />
@@ -170,6 +171,13 @@
 {/if}
 
 <style>
+	hr {
+		background: var(--separators-non-opaque);
+		border: unset;
+		height: 0.5px;
+		margin: 0px -16px;
+	}
+
 	.horizontal {
 		display: flex;
 		gap: 16px;

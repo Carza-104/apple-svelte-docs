@@ -82,6 +82,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
+	<hr />
 	<SegmentedControl>
 		<SegmentedControlButton inputGroup="preview" state="selected" onPress={() => (state = 1)} />
 		<SegmentedControlButton inputGroup="preview" onPress={() => (state = 2)} />
@@ -143,6 +144,13 @@
 {/if}
 
 <style>
+	hr {
+		background: var(--separators-non-opaque);
+		border: unset;
+		height: 0.5px;
+		margin: 0px -16px;
+	}
+
 	.table-container {
 		display: flex;
 		flex-direction: column;

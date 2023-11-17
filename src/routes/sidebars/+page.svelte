@@ -427,6 +427,7 @@
 	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </SegmentedControl>
 {#if panel === 'preview'}
+	<hr />
 	{#if state === 'default'}
 		<Button type="bezeled" symbol="visibility" label="Hide sidebar" onPress={handlePress} />
 	{:else}
@@ -587,6 +588,13 @@
 {/if}
 
 <style>
+	hr {
+		background: var(--separators-non-opaque);
+		border: unset;
+		height: 0.5px;
+		margin: 0px -16px;
+	}
+
 	.table-container {
 		display: flex;
 		flex-direction: column;
