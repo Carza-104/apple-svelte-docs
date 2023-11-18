@@ -184,8 +184,6 @@
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
 					<SidebarSectionItem
-						behavior="hyperlink"
-						hyperlink={SidebarSectionItem.redirect}
 						state="selected-secondary"
 						title={sidebarSectionItem.title}
 						showImage
@@ -193,8 +191,6 @@
 					/>
 				{:else}
 					<SidebarSectionItem
-						behavior="hyperlink"
-						hyperlink={SidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
 						showImage
 						symbol={sidebarSectionItem.symbol}
@@ -203,8 +199,6 @@
 				{/if}
 			{/each}
 			<SidebarSectionItem
-				behavior="hyperlink"
-				hyperlink="https://github.com/Carza-104/apple-svelte"
 				inputGroup="redirect"
 				title="GitHub"
 				showImage
@@ -213,8 +207,6 @@
 				onPress={() => redirect('https://github.com/Carza-104/apple-svelte')}
 			/>
 			<SidebarSectionItem
-				behavior="hyperlink"
-				hyperlink="https://www.npmjs.com/package/apple-svelte"
 				inputGroup="redirect"
 				title="npm"
 				showImage
