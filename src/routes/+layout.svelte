@@ -245,8 +245,11 @@
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<TabBar id="tab-bar" style="position: unset" />
-		<TabBar id="tab-bar" style="margin: -24px -16px; width: calc(100% - 32px)">
+		<TabBar
+			id="tab-bar"
+			style="margin: -24px -16px; opacity: 0%; padding: 38px 30px 72px; position: unset"
+		/>
+		<TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if SidebarSectionItem.title === title}
 					<TabBarButton
