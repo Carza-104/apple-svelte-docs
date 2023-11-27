@@ -29,6 +29,18 @@
 
 	let tabBarButtonProps = [
 		{
+			name: 'behavior',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hyperlink"'
+		},
+		{
+			name: 'href',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"/"'
+		},
+		{
 			name: 'inputGroup',
 			description: 'Insert description here.',
 			type: 'String',
