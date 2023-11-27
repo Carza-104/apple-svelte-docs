@@ -169,3 +169,16 @@
 		</table>
 	</div>
 {/if}
+
+<style>
+	.horizontal {
+		display: flex;
+		gap: 16px;
+	}
+
+	.vertical {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+</style>
