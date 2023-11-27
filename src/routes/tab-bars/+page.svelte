@@ -89,9 +89,9 @@
 {#if panel === 'preview'}
 	<hr />
 	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton slot="button-1" />
-		<TabBarButton slot="button-2" />
-		<TabBarButton slot="button-3" />
+		<TabBarButton />
+		<TabBarButton />
+		<TabBarButton />
 	</TabBar>
 {:else if panel === 'code'}
 	<Code {code} />
@@ -133,55 +133,3 @@
 		</div>
 	</div>
 {/if}
-
-<style>
-	hr {
-		background: var(--separators-non-opaque);
-		border: unset;
-		height: 0.5px;
-		margin: 0px -16px;
-	}
-
-	.table-container {
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-	}
-
-	.table {
-		background: var(--bg-grouped-secondary);
-		border-radius: 10px;
-		overflow-x: auto;
-	}
-
-	.webkit::-webkit-scrollbar {
-		display: none;
-	}
-
-	table {
-		border-collapse: collapse;
-		white-space: pre;
-		width: 100%;
-	}
-
-	td {
-		border: 0.5px solid var(--separators-opaque);
-		padding: 11px 16px;
-	}
-
-	td:first-child {
-		border-left: unset;
-	}
-
-	td:last-child {
-		border-right: unset;
-	}
-
-	tr:first-child td {
-		border-top: unset;
-	}
-
-	tr:last-child td {
-		border-bottom: unset;
-	}
-</style>

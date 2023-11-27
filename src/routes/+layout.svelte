@@ -15,17 +15,16 @@
 		SidebarNavigationBarLeading,
 		SidebarSection,
 		SidebarSectionItem,
+		TabBar,
 		TabBarButton
 	} from 'apple-svelte';
 	import './code.css';
+	import './layout.css';
 	import './styles.css';
 
 	let sidebarState = undefined;
-	let sidebarButtonState = undefined;
-	let windowWidth = undefined;
 
-	/* Hide or show the sidebar when the button is pressed. */
-	function onSidebarPress() {
+	function handleSidebarPress() {
 		if (sidebarState === 'default') {
 			sidebarState = 'hidden';
 		} else {
@@ -33,28 +32,22 @@
 		}
 	}
 
-	$: {
-		if (windowWidth > 592) {
-			sidebarButtonState = 'enabled';
-		} else {
-			sidebarButtonState = 'disabled';
-		}
-	}
-
 	let title = $page.url.pathname;
 
 	/* Automatically figure out the title based on the URL. */
-	if ($page.url.pathname === '/') {
-		title = 'Home';
-	} else {
-		/* Remove the leading slash, replace every hyphen with a whitespace character, and capitalize every word. */
-		title = $page.url.pathname
-			.replace(/\//g, '')
-			.replace(/-/g, ' ')
-			.replace(/\b\w/g, (match) => match.toUpperCase());
+	$: {
+		if ($page.url.pathname === '/') {
+			title = 'Home';
+		} else {
+			/* Remove the leading slash, replace every hyphen with a whitespace character, and capitalize every word. */
+			title = $page.url.pathname
+				.replace(/\//g, '')
+				.replace(/-/g, ' ')
+				.replace(/\b\w/g, (match) => match.toUpperCase());
+		}
 	}
 
-	/* Arrays for items in sidebar sections. */
+	/* Sidebar section items. */
 	let sidebarAboutSectionItems = [
 		{
 			title: 'Home',
@@ -78,7 +71,7 @@
 		}
 	];
 
-	export let sidebarComponentsSectionItems = [
+	let sidebarComponentsSectionItems = [
 		{
 			title: 'Action Sheets',
 			symbol: 'crop_5_4',
@@ -143,11 +136,7 @@
 
 	/* Call this function to redirect the user when a sidebar section item is pressed. */
 	function redirect(url) {
-		if (url.startsWith('http://') || url.startsWith('https://')) {
-			window.open(url, '_blank');
-		} else {
-			window.location.href = url;
-		}
+		window.open(url, '_blank');
 	}
 </script>
 
@@ -165,25 +154,26 @@
 	/>
 	<title>{title} | apple-svelte</title>
 
-	<!-- Bing Webmaster Tools: -->
+	<!-- Bing Webmaster Tools, Google Search Console: -->
 	<meta name="msvalidate.01" content="1A6D67EAF90B63FBB367A65A9985F3B6" />
-
-	<!-- Google Search Console: -->
 	<meta name="google-site-verification" content="_gjhL2PbvDHezhcXeGbB890fQRspfel7GfH__TwX7hE" />
 </svelte:head>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <main>
 	<Sidebar bind:state={sidebarState} id="sidebar">
 		<SidebarNavigationBar {title}>
-			<SidebarNavigationBarLeading slot="leading" symbol="thumbnail_bar" onPress={onSidebarPress} />
+			<SidebarNavigationBarLeading
+				slot="leading"
+				symbol="thumbnail_bar"
+				onPress={handleSidebarPress}
+			/>
 		</SidebarNavigationBar>
 		<SidebarSection showHeading heading="About">
-			<!-- Automatically render each sidebar section item. -->
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
 					<SidebarSectionItem
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
 						title={sidebarSectionItem.title}
 						showImage
@@ -191,15 +181,17 @@
 					/>
 				{:else}
 					<SidebarSectionItem
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
 						showImage
 						symbol={sidebarSectionItem.symbol}
-						onPress={() => redirect(sidebarSectionItem.redirect)}
 					/>
 				{/if}
 			{/each}
 			<SidebarSectionItem
-				inputGroup="redirect"
+				href="https://github.com/Carza-104/apple-svelte"
+				inputGroup="redirect-1"
 				title="GitHub"
 				showImage
 				imageType="bitmap"
@@ -207,7 +199,8 @@
 				onPress={() => redirect('https://github.com/Carza-104/apple-svelte')}
 			/>
 			<SidebarSectionItem
-				inputGroup="redirect"
+				href="https://www.npmjs.com/package/apple-svelte"
+				inputGroup="redirect-2"
 				title="npm"
 				showImage
 				imageType="bitmap"
@@ -216,10 +209,11 @@
 			/>
 		</SidebarSection>
 		<SidebarSection showHeading heading="Components">
-			<!-- Automatically render each sidebar section item. -->
 			{#each sidebarComponentsSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
 					<SidebarSectionItem
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
 						title={sidebarSectionItem.title}
 						showImage
@@ -227,101 +221,59 @@
 					/>
 				{:else}
 					<SidebarSectionItem
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
 						showImage
 						symbol={sidebarSectionItem.symbol}
-						onPress={() => redirect(sidebarSectionItem.redirect)}
 					/>
 				{/if}
 			{/each}
 		</SidebarSection>
 	</Sidebar>
 	<div class="main">
-		{#if windowWidth <= 592 && sidebarComponentsSectionItems.some((item) => item.title === title)}
-			<NavigationBar
-				showBackground
-				size="large"
-				{title}
-				style="margin: -24px -16px 0px; padding-top: 27px"
-			>
-				<NavigationBarLeading
-					slot="leading"
-					label="Components"
-					onPress={() => redirect('/components')}
-				/>
-			</NavigationBar>
-		{:else if sidebarButtonState === 'enabled'}
-			<NavigationBar
-				showBackground
-				size="large"
-				{title}
-				style="margin: -24px -16px 0px; padding-top: 27px"
-			>
-				<NavigationBarTrailing slot="leading" symbol="thumbnail_bar" onPress={onSidebarPress} />
-			</NavigationBar>
-		{:else}
-			<NavigationBar
-				showBackground
-				size="large"
-				{title}
-				style="margin: -24px -16px 0px; padding-top: 27px"
-			>
-				<NavigationBarTrailing slot="leading" state="disabled" symbol="thumbnail_bar" />
-			</NavigationBar>
-		{/if}
+		<NavigationBar
+			showBackground
+			size="large"
+			{title}
+			style="margin: -24px -16px 0px; padding-top: 27px"
+		>
+			<NavigationBarTrailing slot="leading" symbol="thumbnail_bar" onPress={handleSidebarPress} />
+		</NavigationBar>
 		<div class="banner">
 			<ListRowImage type="symbol" symbol="report" />
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<!-- Make the tab bar take up space in the document-flow. -->
-		<div class="document-flow-tab-bar" />
-		<!-- Use custom HTML instead of the actual component since you can't conditionally render slots. -->
-		<div class="tab-bar">
-			<!-- Automatically render each tab bar button. -->
+		<TabBar id="tab-bar" style="position: unset" />
+		<TabBar id="tab-bar" style="margin: -24px -16px; width: calc(100% - 32px)">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
-				{#if sidebarSectionItem.title === title}
+				{#if SidebarSectionItem.title === title}
 					<TabBarButton
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						state="selected"
 						symbol={sidebarSectionItem.symbol}
 						label={sidebarSectionItem.title}
 					/>
 				{:else}
 					<TabBarButton
+						behavior="hyperlink"
+						href={sidebarSectionItem.redirect}
 						symbol={sidebarSectionItem.symbol}
 						label={sidebarSectionItem.title}
-						onPress={() => redirect(sidebarSectionItem.redirect)}
 					/>
 				{/if}
 			{/each}
-			{#if title === 'Components'}
-				<TabBarButton state="selected" symbol="stack" label="Components" />
-			{:else}
-				<TabBarButton symbol="stack" label="Components" onPress={() => redirect('/components')} />
-			{/if}
-		</div>
+			<TabBarButton behavior="hyperlink" href="/components" symbol="stack" label="Components" />
+		</TabBar>
 	</div>
 </main>
 
 <style>
 	:root {
-		color-scheme: light dark;
 		--colors-accent: var(--colors-indigo);
 		--colors-accent-2: var(--colors-indigo-2);
-		--border-bottom: rgb(0, 0, 0, 0.3);
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--border-bottom: rgb(255, 255, 255, 0.15);
-		}
-	}
-
-	/* Hide the sidebar by default on mobile devices. */
-	@media (max-width: 592px) {
-		main :global(#sidebar) {
-			display: none;
-		}
 	}
 
 	.main {
@@ -340,39 +292,17 @@
 		padding: 11px 16px;
 	}
 
-	.document-flow-tab-bar {
-		height: 94px;
-		margin: 0px -16px -24px;
+	/* Hide the sidebar by default on mobile devices. */
+	@media (max-width: 592px) {
+		main :global(#sidebar) {
+			display: none;
+		}
 	}
 
-	.tab-bar {
-		backdrop-filter: blur(25px);
-		background: var(--materials-chrome);
-		background-blend-mode: var(--materials-chrome-background-blend-mode);
-		bottom: 0px;
-		box-shadow: 0px -0.33px rgb(0, 0, 0, 0.3);
-		display: flex;
-		justify-content: space-between;
-		margin: -24px -16px;
-		padding: 7px 15px 60px;
-		position: fixed;
-		-webkit-backdrop-filter: blur(25px);
-		width: calc(100% - 32px);
-	}
-
+	/* Hide the tab bar by default on larger devices. */
 	@media (min-width: 593px) {
-		.document-flow-tab-bar {
+		main :global(#tab-bar) {
 			display: none;
-		}
-
-		.tab-bar {
-			display: none;
-		}
-	}
-
-	@media (prefers-color-scheme: dark) {
-		.tab-bar {
-			box-shadow: 0px -0.33px rgb(255, 255, 255, 0.15);
 		}
 	}
 </style>
