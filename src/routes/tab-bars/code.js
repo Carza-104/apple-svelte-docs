@@ -11,8 +11,8 @@ export let code = `<script>
 </svelte:head>
 
 <TabBar>
-	<TabBarButton slot="button-1" />
-	<TabBarButton slot="button-2" />
-	<TabBarButton slot="button-3" />
+	<TabBarButton />
+	<TabBarButton />
+	<TabBarButton />
 </TabBar>
 `;
