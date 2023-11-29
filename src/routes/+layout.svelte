@@ -251,7 +251,7 @@
 		/>
 		<TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
-				{#if SidebarSectionItem.title === title}
+				{#if sidebarSectionItem.title === title}
 					<TabBarButton
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
