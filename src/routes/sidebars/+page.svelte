@@ -422,8 +422,7 @@
 </p>
 <p>
 	To actually make sidebar section items work you can have them redirect the user to a separate page
-	and set each sidebar section item's <code>state</code> prop to <code>selected</code> manually or you
-	can conditionally render each view.
+	with the <code>behavior</code> prop set to <code>"hyperlink"</code>.
 </p>
 <p>
 	It's recommended that you put your sidebar code outside the main div where your content lives. You

@@ -89,9 +89,8 @@
 
 <p>If you can, avoid using tab bars on larger screens.</p>
 <p>
-	To actually make tab bar buttons work, you can either have them redirect the user to a separate
-	page and set each tab bar button's <code>state</code> prop to <code>selected</code> for every page
-	or you can use a similar approach as the one used in the sidebar example.
+	To actually make tab bar buttons work you can have them redirect the user to a separate page with
+	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
 </p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />

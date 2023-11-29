@@ -145,6 +145,11 @@
 	Alert components give users critical information (for example, warning them about their action)
 	right away.
 </p>
+<p>
+	You can bind the alert's <code>state</code> prop to a variable to better control when the component
+	is shown.
+</p>
+<p>As all modal views, action sheets can be hidden by pressing outside them or with the Esc key.</p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />

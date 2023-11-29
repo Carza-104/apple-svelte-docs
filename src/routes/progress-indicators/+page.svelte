@@ -90,6 +90,10 @@
 </script>
 
 <p>Progress indicators let users know that your project is loading content.</p>
+<p>
+	You can bind the progress indicator's <code>state</code> prop to a variable to better control when
+	the component is shown.
+</p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />

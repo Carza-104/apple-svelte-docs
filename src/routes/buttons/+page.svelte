@@ -82,6 +82,11 @@
 	Button components are very straightforward: you can declare a function and have the button call it
 	when pressed.
 </p>
+<p>
+	Button components have a prop called <code>state</code>, which disables the button entirely when
+	set to
+	<code>"disabled"</code>.
+</p>
 <SegmentedControl>
 	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
 	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
