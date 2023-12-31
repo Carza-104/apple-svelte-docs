@@ -190,22 +190,22 @@
 				{/if}
 			{/each}
 			<SidebarSectionItem
+				behavior="hyperlink"
 				href="https://github.com/Carza-104/apple-svelte"
 				inputGroup="redirect-1"
 				title="GitHub"
 				showImage
 				imageType="bitmap"
 				image="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-				onPress={() => redirect('https://github.com/Carza-104/apple-svelte')}
 			/>
 			<SidebarSectionItem
+				behavior="hyperlink"
 				href="https://www.npmjs.com/package/apple-svelte"
 				inputGroup="redirect-2"
 				title="npm"
 				showImage
 				imageType="bitmap"
 				image="https://avatars.githubusercontent.com/u/6078720?s=200&v=4"
-				onPress={() => redirect('https://www.npmjs.com/package/apple-svelte')}
 			/>
 		</SidebarSection>
 		<SidebarSection showHeading heading="Components">
