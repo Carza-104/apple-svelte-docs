@@ -133,11 +133,6 @@
 			redirect: '/toolbars'
 		}
 	];
-
-	/* Call this function to redirect the user when a sidebar section item is pressed. */
-	function redirect(url) {
-		window.open(url, '_blank');
-	}
 </script>
 
 <svelte:head>
