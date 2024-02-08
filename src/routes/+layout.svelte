@@ -8,7 +8,6 @@
 	import {
 		ListRowImage,
 		NavigationBar,
-		NavigationBarLeading,
 		NavigationBarTrailing,
 		Sidebar,
 		SidebarNavigationBar,
@@ -152,6 +151,18 @@
 	<!-- Bing Webmaster Tools, Google Search Console: -->
 	<meta name="msvalidate.01" content="1A6D67EAF90B63FBB367A65A9985F3B6" />
 	<meta name="google-site-verification" content="_gjhL2PbvDHezhcXeGbB890fQRspfel7GfH__TwX7hE" />
+
+	<meta property="og:title" content="{title} | apple-svelte" />
+	<meta
+		property="og:description"
+		content="apple-svelte is a component library based on Apple's Human Interface design language."
+	/>
+	<meta
+		property="og:image"
+		content="https://repository-images.githubusercontent.com/695473033/7a170301-50b0-4fe2-ad54-3235e0f68e13"
+	/>
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 </svelte:head>
 
 <main>
