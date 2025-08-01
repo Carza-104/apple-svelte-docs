@@ -9,14 +9,29 @@
 			redirect: '/action-sheets'
 		},
 		{
+			title: '(iOS 26) Action Sheets',
+			symbol: 'crop_5_4',
+			redirect: '/version-26-action-sheets'
+		},
+		{
 			title: 'Alerts',
 			symbol: 'crop_5_4',
 			redirect: '/alerts'
 		},
 		{
+			title: '(iOS 26) Alerts',
+			symbol: 'crop_5_4',
+			redirect: '/version-26-alerts'
+		},
+		{
 			title: 'Buttons',
 			symbol: 'touch_app',
 			redirect: '/buttons'
+		},
+		{
+			title: '(iOS 26) Buttons',
+			symbol: 'touch_app',
+			redirect: '/version-26-buttons'
 		},
 		{
 			title: 'Collections',
@@ -27,6 +42,11 @@
 			title: 'Lists',
 			symbol: 'table_rows',
 			redirect: '/lists'
+		},
+		{
+			title: '(iOS 26) Lists',
+			symbol: 'table_rows',
+			redirect: '/version-26-lists'
 		},
 		{
 			title: 'Navigation Bars',
@@ -49,9 +69,19 @@
 			redirect: '/segmented-controls'
 		},
 		{
+			title: '(iOS 26) Segmented Controls',
+			symbol: 'view_column',
+			redirect: '/version-26-segmented-controls'
+		},
+		{
 			title: 'Sidebars',
 			symbol: 'thumbnail_bar',
 			redirect: '/sidebars'
+		},
+		{
+			title: '(iOS 26) Sidebars',
+			symbol: 'thumbnail_bar',
+			redirect: '/version-26-sidebars'
 		},
 		{
 			title: 'Tab Bars',
@@ -59,9 +89,19 @@
 			redirect: '/tab-bars'
 		},
 		{
+			title: '(iOS 26) Tab Bars',
+			symbol: 'crop_16_9',
+			redirect: '/version-26-tab-bars'
+		},
+		{
 			title: 'Toolbars',
 			symbol: 'crop_16_9',
 			redirect: '/toolbars'
+		},
+		{
+			title: '(iOS 26) Toolbars',
+			symbol: 'crop_16_9',
+			redirect: '/version-26-toolbars'
 		}
 	];
 
