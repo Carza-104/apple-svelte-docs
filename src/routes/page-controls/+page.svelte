@@ -126,35 +126,39 @@
 		<code class="title3-emphasized">PageControl</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each pageControlProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each pageControlProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">PageControlButton</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each pageControlButtonProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each pageControlButtonProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 	</div>

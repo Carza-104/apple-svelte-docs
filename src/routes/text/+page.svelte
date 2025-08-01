@@ -60,15 +60,17 @@
 </p>
 <div class="table {elementClass}">
 	<table>
-		<tr class="headline">
-			<td>Name</td>
-			<td>Class</td>
-		</tr>
-		{#each text as text}
-			<tr>
-				<td class={text.code}>{text.name}</td>
-				<td><code>{text.code}</code></td>
+		<tbody>
+			<tr class="headline">
+				<td>Name</td>
+				<td>Class</td>
 			</tr>
-		{/each}
+			{#each text as text}
+				<tr>
+					<td class={text.code}>{text.name}</td>
+					<td><code>{text.code}</code></td>
+				</tr>
+			{/each}
+		</tbody>
 	</table>
 </div>

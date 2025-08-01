@@ -677,188 +677,210 @@
 		<code class="title3-emphasized">List</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListButtonRow</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listButtonRowProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listButtonRowProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRow</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowButtonTrailing</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowButtonTrailingProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowButtonTrailingProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowDefaultTrailing</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowDefaultTrailingProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowDefaultTrailingProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowDisclosureTrailing</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowDisclosureTrailingProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowDisclosureTrailingProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowImage</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowImageProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowImageProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowStepperTrailing</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowStepperTrailingProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowStepperTrailingProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListRowToggleTrailing</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listRowToggleTrailingProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listRowToggleTrailingProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListSliderRow</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listSliderRowProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listSliderRowProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">ListTextFieldRow</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each listTextFieldRowProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each listTextFieldRowProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 	</div>

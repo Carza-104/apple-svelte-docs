@@ -136,35 +136,39 @@
 		<code class="title3-emphasized">Version26ActionSheet</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each actionSheetProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each actionSheetProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">Version26ActionSheetButton</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each actionSheetButtonProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each actionSheetButtonProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 	</div>

@@ -120,35 +120,39 @@
 		<code class="title3-emphasized">RegularProgressIndicator</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each regularProgressIndicatorProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each regularProgressIndicatorProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 		<code class="title3-emphasized">SmallProgressIndicator</code>
 		<div class="table {elementClass}">
 			<table>
-				<tr class="headline">
-					<td>Name</td>
-					<td>Type</td>
-					<td>Default values</td>
-				</tr>
-				{#each smallProgressIndicatorProps as prop}
-					<tr>
-						<td><code>{prop.name}</code></td>
-						<td>{prop.type}</td>
-						<td><code>{prop.defaultValues}</code></td>
+				<tbody>
+					<tr class="headline">
+						<td>Name</td>
+						<td>Type</td>
+						<td>Default values</td>
 					</tr>
-				{/each}
+					{#each smallProgressIndicatorProps as prop}
+						<tr>
+							<td><code>{prop.name}</code></td>
+							<td>{prop.type}</td>
+							<td><code>{prop.defaultValues}</code></td>
+						</tr>
+					{/each}
+				</tbody>
 			</table>
 		</div>
 	</div>

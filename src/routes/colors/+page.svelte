@@ -103,7 +103,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -119,7 +119,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -135,7 +135,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -151,7 +151,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -167,7 +167,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -183,7 +183,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -199,7 +199,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
@@ -215,7 +215,7 @@
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
-				/>
+				></div>
 				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol

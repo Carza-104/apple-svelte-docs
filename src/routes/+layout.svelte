@@ -79,7 +79,7 @@
 		{
 			title: '(iOS 26) Action Sheets',
 			symbol: 'crop_5_4',
-			redirect: '/26-action-sheets'
+			redirect: '/version-26-action-sheets'
 		},
 		{
 			title: 'Alerts',
@@ -89,7 +89,7 @@
 		{
 			title: '(iOS 26) Alerts',
 			symbol: 'crop_5_4',
-			redirect: '/26-alerts'
+			redirect: '/version-26-alerts'
 		},
 		{
 			title: 'Buttons',
@@ -99,7 +99,7 @@
 		{
 			title: '(iOS 26) Buttons',
 			symbol: 'touch_app',
-			redirect: '/26-buttons'
+			redirect: '/version-26-buttons'
 		},
 		{
 			title: 'Collections',
@@ -114,7 +114,7 @@
 		{
 			title: '(iOS 26) Lists',
 			symbol: 'table_rows',
-			redirect: '/26-lists'
+			redirect: '/version-26-lists'
 		},
 		{
 			title: 'Navigation Bars',
@@ -139,7 +139,7 @@
 		{
 			title: '(iOS 26) Segmented Controls',
 			symbol: 'view_column',
-			redirect: '/26-segmented-controls'
+			redirect: '/version-26-segmented-controls'
 		},
 		{
 			title: 'Sidebars',
@@ -149,7 +149,7 @@
 		{
 			title: '(iOS 26) Sidebars',
 			symbol: 'thumbnail_bar',
-			redirect: '/26-sidebars'
+			redirect: '/version-26-sidebars'
 		},
 		{
 			title: 'Tab Bars',
@@ -159,7 +159,7 @@
 		{
 			title: '(iOS 26) Tab Bars',
 			symbol: 'crop_16_9',
-			redirect: '/26-tab-bars'
+			redirect: '/version-26-tab-bars'
 		},
 		{
 			title: 'Toolbars',
@@ -169,7 +169,7 @@
 		{
 			title: '(iOS 26) Toolbars',
 			symbol: 'crop_16_9',
-			redirect: '/26-toolbars'
+			redirect: '/version-26-toolbars'
 		}
 	];
 </script>
@@ -282,7 +282,7 @@
 			showBackground
 			size="large"
 			{title}
-			style="margin: -24px -16px 0px; padding-top: 27px"
+			style="margin: -24px -16px 0px 0px; padding-top: 27px"
 		>
 			<NavigationBarTrailing
 				slot="leading"

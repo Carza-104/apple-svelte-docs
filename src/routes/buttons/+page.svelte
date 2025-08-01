@@ -163,18 +163,20 @@
 {:else}
 	<div class="table {elementClass}">
 		<table>
-			<tr class="headline">
-				<td>Name</td>
-				<td>Type</td>
-				<td>Default values</td>
-			</tr>
-			{#each props as prop}
-				<tr>
-					<td><code>{prop.name}</code></td>
-					<td>{prop.type}</td>
-					<td><code>{prop.defaultValues}</code></td>
+			<tbody>
+				<tr class="headline">
+					<td>Name</td>
+					<td>Type</td>
+					<td>Default values</td>
 				</tr>
-			{/each}
+				{#each props as prop}
+					<tr>
+						<td><code>{prop.name}</code></td>
+						<td>{prop.type}</td>
+						<td><code>{prop.defaultValues}</code></td>
+					</tr>
+				{/each}
+			</tbody>
 		</table>
 	</div>
 {/if}
