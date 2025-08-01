@@ -1,6 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26Button, IOS26SegmentedControl, IOS26SegmentedControlButton } from 'apple-svelte';
+	import {
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -75,48 +79,48 @@
 	set to
 	<code>"disabled"</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<div class="horizontal">
 		<div class="vertical">
-			<IOS26Button symbol="stack" label="Button" />
+			<Version26Button symbol="stack" label="Button" />
 		</div>
 		<div class="vertical">
-			<IOS26Button size="medium" symbol="stack" label="Button" />
+			<Version26Button size="medium" symbol="stack" label="Button" />
 		</div>
 		<div class="vertical">
-			<IOS26Button size="large" symbol="stack" label="Button" />
-		</div>
-	</div>
-	<div class="horizontal">
-		<div class="vertical">
-			<IOS26Button labelType="text" label="Button" />
-		</div>
-		<div class="vertical">
-			<IOS26Button labelType="text" size="medium" label="Button" />
-		</div>
-		<div class="vertical">
-			<IOS26Button labelType="text" size="large" label="Button" />
+			<Version26Button size="large" symbol="stack" label="Button" />
 		</div>
 	</div>
 	<div class="horizontal">
 		<div class="vertical">
-			<IOS26Button labelType="symbol" symbol="stack" />
+			<Version26Button labelType="text" label="Button" />
 		</div>
 		<div class="vertical">
-			<IOS26Button labelType="symbol" size="medium" symbol="stack" />
+			<Version26Button labelType="text" size="medium" label="Button" />
 		</div>
 		<div class="vertical">
-			<IOS26Button labelType="symbol" size="large" symbol="stack" />
+			<Version26Button labelType="text" size="large" label="Button" />
+		</div>
+	</div>
+	<div class="horizontal">
+		<div class="vertical">
+			<Version26Button labelType="symbol" symbol="stack" />
+		</div>
+		<div class="vertical">
+			<Version26Button labelType="symbol" size="medium" symbol="stack" />
+		</div>
+		<div class="vertical">
+			<Version26Button labelType="symbol" size="large" symbol="stack" />
 		</div>
 	</div>
 {:else if panel === 'code'}

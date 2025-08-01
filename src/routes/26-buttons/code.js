@@ -1,5 +1,5 @@
 export let code = `<script>
-	import { IOS26Button } from 'apple-svelte';
+	import { Version26Button } from 'apple-svelte';
 </script>
 
 <svelte:head>
@@ -12,35 +12,35 @@ export let code = `<script>
 
 <div class="horizontal">
 	<div class="vertical">
-		<IOS26Button symbol="stack" label="IOS26Button" />
+		<Version26Button symbol="stack" label="Version26Button" />
 	</div>
 	<div class="vertical">
-		<IOS26Button size="medium" symbol="stack" label="IOS26Button" />
+		<Version26Button size="medium" symbol="stack" label="Version26Button" />
 	</div>
 	<div class="vertical">
-		<IOS26Button size="large" symbol="stack" label="IOS26Button" />
-	</div>
-</div>
-<div class="horizontal">
-	<div class="vertical">
-		<IOS26Button labelType="text" label="IOS26Button" />
-	</div>
-	<div class="vertical">
-		<IOS26Button labelType="text" size="medium" label="IOS26Button" />
-	</div>
-	<div class="vertical">
-		<IOS26Button labelType="text" size="large" label="IOS26Button" />
+		<Version26Button size="large" symbol="stack" label="Version26Button" />
 	</div>
 </div>
 <div class="horizontal">
 	<div class="vertical">
-		<IOS26Button labelType="symbol" symbol="stack" />
+		<Version26Button labelType="text" label="Version26Button" />
 	</div>
 	<div class="vertical">
-		<IOS26Button labelType="symbol" size="medium" symbol="stack" />
+		<Version26Button labelType="text" size="medium" label="Version26Button" />
 	</div>
 	<div class="vertical">
-		<IOS26Button labelType="symbol" size="large" symbol="stack" />
+		<Version26Button labelType="text" size="large" label="Version26Button" />
+	</div>
+</div>
+<div class="horizontal">
+	<div class="vertical">
+		<Version26Button labelType="symbol" symbol="stack" />
+	</div>
+	<div class="vertical">
+		<Version26Button labelType="symbol" size="medium" symbol="stack" />
+	</div>
+	<div class="vertical">
+		<Version26Button labelType="symbol" size="large" symbol="stack" />
 	</div>
 </div>
 

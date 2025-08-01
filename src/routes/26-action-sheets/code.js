@@ -1,5 +1,5 @@
 export let code = `<script>
-	import { IOS26ActionSheet, IOS26ActionSheetButton, Button } from 'apple-svelte';
+	import { Version26ActionSheet, Version26ActionSheetButton, Button } from 'apple-svelte';
 	let state = 'hidden';
 </script>
 
@@ -18,9 +18,9 @@ export let code = `<script>
 	onPress={() => (state = 'default')}
 />
 
-<IOS26ActionSheet bind:state showHeader showDescription showCancelButton>
-	<IOS26ActionSheetButton state="primary" />
-	<IOS26ActionSheetButton state="secondary" />
-	<IOS26ActionSheetButton state="destructive" />
-</IOS26ActionSheet>
+<Version26ActionSheet bind:state showHeader showDescription showCancelButton>
+	<Version26ActionSheetButton state="primary" />
+	<Version26ActionSheetButton state="secondary" />
+	<Version26ActionSheetButton state="destructive" />
+</Version26ActionSheet>
 `;

@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26Button,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton,
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
 		Sidebar,
 		SidebarNavigationBar,
 		SidebarNavigationBarLeading,
@@ -432,21 +432,31 @@
 	You can nest sidebar section items inside each other as long as their <code>showDisclosure</code>
 	prop is set to <code>true</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	{#if state === 'default'}
-		<IOS26Button type="bezeled" symbol="visibility" label="Hide sidebar" onPress={handlePress} />
+		<Version26Button
+			type="bezeled"
+			symbol="visibility"
+			label="Hide sidebar"
+			onPress={handlePress}
+		/>
 	{:else}
-		<IOS26Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
+		<Version26Button
+			type="bezeled"
+			symbol="visibility"
+			label="Show sidebar"
+			onPress={handlePress}
+		/>
 	{/if}
 
 	<Sidebar

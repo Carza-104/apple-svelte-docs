@@ -2,19 +2,19 @@
 	import { onMount } from 'svelte';
 	import {
 		Collection,
-		IOS26List,
-		IOS26ListButtonRow,
-		IOS26ListRow,
-		IOS26ListRowButtonTrailing,
-		IOS26ListRowDefaultTrailing,
-		IOS26ListRowDisclosureTrailing,
-		IOS26ListRowImage,
-		IOS26ListRowStepperTrailing,
-		IOS26ListRowToggleTrailing,
-		IOS26ListSliderRow,
-		IOS26ListTextFieldRow,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26List,
+		Version26ListButtonRow,
+		Version26ListRow,
+		Version26ListRowButtonTrailing,
+		Version26ListRowDefaultTrailing,
+		Version26ListRowDisclosureTrailing,
+		Version26ListRowImage,
+		Version26ListRowStepperTrailing,
+		Version26ListRowToggleTrailing,
+		Version26ListSliderRow,
+		Version26ListTextFieldRow,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -628,53 +628,53 @@
 	Lists are supposed to be wrapped around list rows and other components. For a better responsive
 	layout, you can put lists inside a collection.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<Collection>
-		<IOS26List showHeader showFooter>
-			<IOS26ListRow>
-				<IOS26ListRowImage slot="image" type="symbol" />
-				<IOS26ListRowButtonTrailing slot="trailing" />
-			</IOS26ListRow>
-			<IOS26ListRow>
-				<IOS26ListRowImage slot="image" type="symbol" />
-				<IOS26ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
-			</IOS26ListRow>
-			<IOS26ListRow>
-				<IOS26ListRowImage slot="image" type="symbol" />
-				<IOS26ListRowDisclosureTrailing slot="trailing" />
-			</IOS26ListRow>
-			<IOS26ListRow>
-				<IOS26ListRowImage slot="image" type="symbol" />
-				<IOS26ListRowStepperTrailing slot="trailing" />
-			</IOS26ListRow>
-			<IOS26ListRow>
-				<IOS26ListRowImage slot="image" type="symbol" />
-				<IOS26ListRowToggleTrailing slot="trailing" />
-			</IOS26ListRow>
-		</IOS26List>
-		<IOS26List showHeader showFooter>
-			<IOS26ListButtonRow />
-			<IOS26ListRow title="Slider value: {sliderValue}" />
-			<IOS26ListSliderRow bind:value={sliderValue} showSymbols />
-			<IOS26ListRow title="Text field value: {textFieldValue}" />
-			<IOS26ListTextFieldRow bind:value={textFieldValue} />
-		</IOS26List>
+		<Version26List showHeader showFooter>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowButtonTrailing slot="trailing" />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowDisclosureTrailing slot="trailing" />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowStepperTrailing slot="trailing" />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowToggleTrailing slot="trailing" />
+			</Version26ListRow>
+		</Version26List>
+		<Version26List showHeader showFooter>
+			<Version26ListButtonRow />
+			<Version26ListRow title="Slider value: {sliderValue}" />
+			<Version26ListSliderRow bind:value={sliderValue} showSymbols />
+			<Version26ListRow title="Text field value: {textFieldValue}" />
+			<Version26ListTextFieldRow bind:value={textFieldValue} />
+		</Version26List>
 	</Collection>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26List</code>
+		<code class="title3-emphasized">Version26List</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -691,7 +691,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListButtonRow</code>
+		<code class="title3-emphasized">Version26ListButtonRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -708,7 +708,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRow</code>
+		<code class="title3-emphasized">Version26ListRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -725,7 +725,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowButtonTrailing</code>
+		<code class="title3-emphasized">Version26ListRowButtonTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -742,7 +742,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowDefaultTrailing</code>
+		<code class="title3-emphasized">Version26ListRowDefaultTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -759,7 +759,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowDisclosureTrailing</code>
+		<code class="title3-emphasized">Version26ListRowDisclosureTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -776,7 +776,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowImage</code>
+		<code class="title3-emphasized">Version26ListRowImage</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -793,7 +793,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowStepperTrailing</code>
+		<code class="title3-emphasized">Version26ListRowStepperTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -810,7 +810,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListRowToggleTrailing</code>
+		<code class="title3-emphasized">Version26ListRowToggleTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -827,7 +827,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListSliderRow</code>
+		<code class="title3-emphasized">Version26ListSliderRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -844,7 +844,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ListTextFieldRow</code>
+		<code class="title3-emphasized">Version26ListTextFieldRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

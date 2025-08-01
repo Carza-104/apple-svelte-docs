@@ -1,17 +1,17 @@
 export let code = `<script>
 	import {
 		Collection,
-		IOS26List,
-		IOS26ListButtonRow,
-		IOS26ListRow,
-		IOS26ListRowButtonTrailing,
-		IOS26ListRowDefaultTrailing,
-		IOS26ListRowDisclosureTrailing,
-		IOS26ListRowImage,
-		IOS26ListRowStepperTrailing,
-		IOS26ListRowToggleTrailing,
-		IOS26ListSliderRow,
-		IOS26ListTextFieldRow
+		Version26List,
+		Version26ListButtonRow,
+		Version26ListRow,
+		Version26ListRowButtonTrailing,
+		Version26ListRowDefaultTrailing,
+		Version26ListRowDisclosureTrailing,
+		Version26ListRowImage,
+		Version26ListRowStepperTrailing,
+		Version26ListRowToggleTrailing,
+		Version26ListSliderRow,
+		Version26ListTextFieldRow
 	} from 'apple-svelte';
 	let sliderValue = undefined;
 	let textFieldValue = undefined;
@@ -26,34 +26,34 @@ export let code = `<script>
 </svelte:head>
 
 <Collection>
-	<IOS26List showHeader showFooter>
-		<IOS26ListRow>
-			<IOS26ListRowImage slot="image" type="symbol" />
-			<IOS26ListRowButtonTrailing slot="trailing" />
-		</IOS26ListRow>
-		<IOS26ListRow>
-			<IOS26ListRowImage slot="image" type="symbol" />
-			<IOS26ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
-		</IOS26ListRow>
-		<IOS26ListRow>
-			<IOS26ListRowImage slot="image" type="symbol" />
-			<IOS26ListRowDisclosureTrailing slot="trailing" />
-		</IOS26ListRow>
-		<IOS26ListRow>
-			<IOS26ListRowImage slot="image" type="symbol" />
-			<IOS26ListRowStepperTrailing slot="trailing" />
-		</IOS26ListRow>
-		<IOS26ListRow>
-			<IOS26ListRowImage slot="image" type="symbol" />
-			<IOS26ListRowToggleTrailing slot="trailing" />
-		</IOS26ListRow>
-	</IOS26List>
-	<IOS26List showHeader showFooter>
-		<IOS26ListButtonRow />
-		<IOS26ListRow title="Slider value: {sliderValue}" />
-		<IOS26ListSliderRow bind:value={sliderValue} showSymbols />
-		<IOS26ListRow title="Text field value: {textFieldValue}" />
-		<IOS26ListTextFieldRow bind:value={textFieldValue} />
-	</IOS26List>
+	<Version26List showHeader showFooter>
+		<Version26ListRow>
+			<Version26ListRowImage slot="image" type="symbol" />
+			<Version26ListRowButtonTrailing slot="trailing" />
+		</Version26ListRow>
+		<Version26ListRow>
+			<Version26ListRowImage slot="image" type="symbol" />
+			<Version26ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
+		</Version26ListRow>
+		<Version26ListRow>
+			<Version26ListRowImage slot="image" type="symbol" />
+			<Version26ListRowDisclosureTrailing slot="trailing" />
+		</Version26ListRow>
+		<Version26ListRow>
+			<Version26ListRowImage slot="image" type="symbol" />
+			<Version26ListRowStepperTrailing slot="trailing" />
+		</Version26ListRow>
+		<Version26ListRow>
+			<Version26ListRowImage slot="image" type="symbol" />
+			<Version26ListRowToggleTrailing slot="trailing" />
+		</Version26ListRow>
+	</Version26List>
+	<Version26List showHeader showFooter>
+		<Version26ListButtonRow />
+		<Version26ListRow title="Slider value: {sliderValue}" />
+		<Version26ListSliderRow bind:value={sliderValue} showSymbols />
+		<Version26ListRow title="Text field value: {textFieldValue}" />
+		<Version26ListTextFieldRow bind:value={textFieldValue} />
+	</Version26List>
 </Collection>
 `;

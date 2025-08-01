@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { Button, IOS26SegmentedControl, IOS26SegmentedControlButton } from 'apple-svelte';
+	import { Button, Version26SegmentedControl, Version26SegmentedControlButton } from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -87,15 +87,15 @@
 	set to
 	<code>"disabled"</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<div class="horizontal">

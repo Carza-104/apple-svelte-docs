@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26ListRow, IOS26ListRowDefaultTrailing } from 'apple-svelte';
+	import { Version26ListRow, Version26ListRowDefaultTrailing } from 'apple-svelte';
 	import Prism from 'prismjs';
 
 	export let title = '+page.svelte';
@@ -28,9 +28,9 @@
 </script>
 
 <div class="code" {id} {style}>
-	<IOS26ListRow {title} style="color: var(--labels-secondary)">
-		<IOS26ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
-	</IOS26ListRow>
+	<Version26ListRow {title} style="color: var(--labels-secondary)">
+		<Version26ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
+	</Version26ListRow>
 	<div class="field {elementClass}">
 		<code class="body">{@html Prism.highlight(code, Prism.languages.markup, 'markup')}</code>
 	</div>

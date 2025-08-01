@@ -13,8 +13,8 @@
 		ListRowToggleTrailing,
 		ListSliderRow,
 		ListTextFieldRow,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -628,11 +628,15 @@
 	Lists are supposed to be wrapped around list rows and other components. For a better responsive
 	layout, you can put lists inside a collection.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<Collection>

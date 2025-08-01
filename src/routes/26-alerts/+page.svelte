@@ -1,12 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26Alert,
-		IOS26AlertButton,
-		IOS26AlertTextField,
-		IOS26Button,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26Alert,
+		Version26AlertButton,
+		Version26AlertTextField,
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -150,30 +150,30 @@
 	is shown.
 </p>
 <p>As all modal views, action sheets can be hidden by pressing outside them or with the Esc key.</p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<IOS26Button symbol="visibility" label="Show alert" onPress={() => (state = 'default')} />
+	<Version26Button symbol="visibility" label="Show alert" onPress={() => (state = 'default')} />
 
-	<IOS26Alert bind:state showDescription>
-		<IOS26AlertTextField slot="text-field" />
-		<IOS26AlertButton slot="button-1" state="primary" />
-		<IOS26AlertButton slot="button-2" state="secondary" />
-		<IOS26AlertButton slot="button-3" state="destructive" />
-	</IOS26Alert>
+	<Version26Alert bind:state showDescription>
+		<Version26AlertTextField slot="text-field" />
+		<Version26AlertButton slot="button-1" state="primary" />
+		<Version26AlertButton slot="button-2" state="secondary" />
+		<Version26AlertButton slot="button-3" state="destructive" />
+	</Version26Alert>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26Alert</code>
+		<code class="title3-emphasized">Version26Alert</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -190,7 +190,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26AlertButton</code>
+		<code class="title3-emphasized">Version26AlertButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -207,7 +207,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26AlertTextField</code>
+		<code class="title3-emphasized">Version26AlertTextField</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

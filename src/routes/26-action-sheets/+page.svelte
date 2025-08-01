@@ -1,11 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26ActionSheet,
-		IOS26ActionSheetButton,
-		IOS26Button,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26ActionSheet,
+		Version26ActionSheetButton,
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -107,29 +107,33 @@
 	is shown.
 </p>
 <p>As all modal views, action sheets can be hidden by pressing outside them or with the Esc key.</p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<IOS26Button symbol="visibility" label="Show action sheet" onPress={() => (state = 'default')} />
+	<Version26Button
+		symbol="visibility"
+		label="Show action sheet"
+		onPress={() => (state = 'default')}
+	/>
 
-	<IOS26ActionSheet bind:state showHeader showDescription>
-		<IOS26ActionSheetButton state="primary" />
-		<IOS26ActionSheetButton state="secondary" />
-		<IOS26ActionSheetButton state="destructive" />
-	</IOS26ActionSheet>
+	<Version26ActionSheet bind:state showHeader showDescription>
+		<Version26ActionSheetButton state="primary" />
+		<Version26ActionSheetButton state="secondary" />
+		<Version26ActionSheetButton state="destructive" />
+	</Version26ActionSheet>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26ActionSheet</code>
+		<code class="title3-emphasized">Version26ActionSheet</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -146,7 +150,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ActionSheetButton</code>
+		<code class="title3-emphasized">Version26ActionSheetButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

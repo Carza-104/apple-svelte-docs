@@ -1,6 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, Toolbar, ToolbarButton } from 'apple-svelte';
+	import {
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		Toolbar,
+		ToolbarButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -74,11 +79,15 @@
 	Toolbar buttons are very straightforward: you can declare a function and have them call it when
 	pressed.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<Toolbar style="border-radius: 10px; position: unset">

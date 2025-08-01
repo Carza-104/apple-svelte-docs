@@ -1,5 +1,5 @@
 export let code = `<script>
-	import { List, ListRow, IOS26SegmentedControl, IOS26SegmentedControlButton } from 'apple-svelte';
+	import { List, ListRow, Version26SegmentedControl, Version26SegmentedControlButton } from 'apple-svelte';
 	let state = 1;
 </script>
 
@@ -11,11 +11,11 @@ export let code = `<script>
 	/>
 </svelte:head>
 
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" onPress={() => (state = 1)} />
-	<IOS26SegmentedControlButton onPress={() => (state = 2)} />
-	<IOS26SegmentedControlButton onPress={() => (state = 3)} />
-</IOS26SegmentedControl>
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton state="selected" onPress={() => (state = 1)} />
+	<Version26SegmentedControlButton onPress={() => (state = 2)} />
+	<Version26SegmentedControlButton onPress={() => (state = 3)} />
+</Version26SegmentedControl>
 
 {#if state === 1}
 	<List>

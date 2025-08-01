@@ -1,5 +1,5 @@
 export let code = `<script>
-	import { IOS26Alert, IOS26AlertButton, Button } from 'apple-svelte';
+	import { Version26Alert, Version26AlertButton, Button } from 'apple-svelte';
 	let state = 'hidden';
 </script>
 
@@ -13,10 +13,10 @@ export let code = `<script>
 
 <Button type="bezeled" symbol="visibility" label="Show alert" onPress={() => (state = 'default')} />
 
-<IOS26Alert bind:state showDescription>
-	<IOS26AlertTextField slot="text-field" />
-	<IOS26AlertButton slot="button-1" state="primary" />
-	<IOS26AlertButton slot="button-2" state="secondary" />
-	<IOS26AlertButton slot="button-3" state="destructive" />
-</IOS26Alert>
+<Version26Alert bind:state showDescription>
+	<Version26AlertTextField slot="text-field" />
+	<Version26AlertButton slot="button-1" state="primary" />
+	<Version26AlertButton slot="button-2" state="secondary" />
+	<Version26AlertButton slot="button-3" state="destructive" />
+</Version26Alert>
 `;

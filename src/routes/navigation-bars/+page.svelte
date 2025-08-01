@@ -7,8 +7,8 @@
 		NavigationBarLeading,
 		NavigationBarSearchField,
 		NavigationBarTrailing,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -230,11 +230,15 @@
 	>
 	prop to <code>"position: sticky; top: 0px"</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<NavigationBar showBackground size="large" style="border-radius: 10px">

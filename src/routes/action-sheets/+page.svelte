@@ -3,9 +3,9 @@
 	import {
 		ActionSheet,
 		ActionSheetButton,
-		IOS26Button,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -125,18 +125,22 @@
 	is shown.
 </p>
 <p>As all modal views, action sheets can be hidden by pressing outside them or with the Esc key.</p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<IOS26Button symbol="visibility" label="Show action sheet" onPress={() => (state = 'default')} />
+	<Version26Button
+		symbol="visibility"
+		label="Show action sheet"
+		onPress={() => (state = 'default')}
+	/>
 
 	<ActionSheet bind:state showHeader showDescription showCancelButton>
 		<ActionSheetButton />

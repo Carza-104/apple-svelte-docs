@@ -1,13 +1,13 @@
 export let code = `<script>
 	import {
 		Button,
-		IOS26Sidebar,
-		IOS26SidebarNavigationBar,
-		IOS26SidebarNavigationBarLeading,
-		IOS26SidebarNavigationBarTrailing,
-		IOS26SidebarSection,
-		IOS26SidebarSectionAddItemButton,
-		IOS26SidebarSectionItem
+		Version26Sidebar,
+		Version26SidebarNavigationBar,
+		Version26SidebarNavigationBarLeading,
+		Version26SidebarNavigationBarTrailing,
+		Version26SidebarSection,
+		Version26SidebarSectionAddItemButton,
+		Version26SidebarSectionItem
 	} from 'apple-svelte';
 	let state = undefined;
 
@@ -34,23 +34,23 @@ export let code = `<script>
 	<Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
 {/if}
 
-<IOS26Sidebar bind:state>
-	<IOS26SidebarNavigationBar>
-		<IOS26SidebarNavigationBarLeading slot="leading" />
-		<IOS26SidebarNavigationBarTrailing slot="trailing" />
-	</IOS26SidebarNavigationBar>
-	<IOS26SidebarSection showHeading heading="Home">
-		<IOS26SidebarSectionItem showImage showTrailingSymbol />
-		<IOS26SidebarSectionItem showImage showDisclosure>
-			<IOS26SidebarSectionItem indentLevel="1" showImage showDisclosure>
-				<IOS26SidebarSectionItem indentLevel="2" showImage showDisclosure>
-					<IOS26SidebarSectionItem indentLevel="3" showImage showDisclosure>
-						<IOS26SidebarSectionItem indentLevel="4" showImage showTrailingSymbol />
-					</IOS26SidebarSectionItem>
-				</IOS26SidebarSectionItem>
-			</IOS26SidebarSectionItem>
-		</IOS26SidebarSectionItem>
-		<IOS26SidebarSectionAddItemButton />
-	</IOS26SidebarSection>
-</IOS26Sidebar>
+<Version26Sidebar bind:state>
+	<Version26SidebarNavigationBar>
+		<Version26SidebarNavigationBarLeading slot="leading" />
+		<Version26SidebarNavigationBarTrailing slot="trailing" />
+	</Version26SidebarNavigationBar>
+	<Version26SidebarSection showHeading heading="Home">
+		<Version26SidebarSectionItem showImage showTrailingSymbol />
+		<Version26SidebarSectionItem showImage showDisclosure>
+			<Version26SidebarSectionItem indentLevel="1" showImage showDisclosure>
+				<Version26SidebarSectionItem indentLevel="2" showImage showDisclosure>
+					<Version26SidebarSectionItem indentLevel="3" showImage showDisclosure>
+						<Version26SidebarSectionItem indentLevel="4" showImage showTrailingSymbol />
+					</Version26SidebarSectionItem>
+				</Version26SidebarSectionItem>
+			</Version26SidebarSectionItem>
+		</Version26SidebarSectionItem>
+		<Version26SidebarSectionAddItemButton />
+	</Version26SidebarSection>
+</Version26Sidebar>
 `;

@@ -3,9 +3,9 @@
 	import {
 		RegularProgressIndicator,
 		SmallProgressIndicator,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton,
-		IOS26Button
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		Version26Button
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -94,18 +94,18 @@
 	You can bind the progress indicator's <code>state</code> prop to a variable to better control when
 	the component is shown.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<IOS26Button
+	<Version26Button
 		symbol="visibility"
 		label="Show progress indicators"
 		onPress={() => (state = 'default')}

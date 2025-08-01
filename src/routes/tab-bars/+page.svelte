@@ -1,6 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, TabBar, TabBarButton } from 'apple-svelte';
+	import {
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		TabBar,
+		TabBarButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -92,11 +97,15 @@
 	To actually make tab bar buttons work you can have them redirect the user to a separate page with
 	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<TabBar style="border-radius: 10px; position: unset">

@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton,
-		IOS26Toolbar,
-		IOS26ToolbarButton
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		Version26Toolbar,
+		Version26ToolbarButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -79,29 +79,29 @@
 	Toolbar buttons are very straightforward: you can declare a function and have them call it when
 	pressed.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<div>
-		<IOS26Toolbar style="border-radius: 10px; position: unset; width: 100%">
-			<IOS26ToolbarButton />
-			<IOS26ToolbarButton />
-			<IOS26ToolbarButton />
-		</IOS26Toolbar>
+		<Version26Toolbar style="border-radius: 10px; position: unset; width: 100%">
+			<Version26ToolbarButton />
+			<Version26ToolbarButton />
+			<Version26ToolbarButton />
+		</Version26Toolbar>
 	</div>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26Toolbar</code>
+		<code class="title3-emphasized">Version26Toolbar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -118,7 +118,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26ToolbarButton</code>
+		<code class="title3-emphasized">Version26ToolbarButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

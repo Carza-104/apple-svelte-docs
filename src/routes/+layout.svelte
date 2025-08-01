@@ -6,16 +6,16 @@
 
 	import { page } from '$app/stores';
 	import {
-		IOS26ListRowImage,
+		Version26ListRowImage,
 		NavigationBar,
 		NavigationBarTrailing,
-		IOS26Sidebar,
-		IOS26SidebarNavigationBar,
-		IOS26SidebarNavigationBarLeading,
-		IOS26SidebarSection,
-		IOS26SidebarSectionItem,
-		IOS26TabBar,
-		IOS26TabBarButton
+		Version26Sidebar,
+		Version26SidebarNavigationBar,
+		Version26SidebarNavigationBarLeading,
+		Version26SidebarSection,
+		Version26SidebarSectionItem,
+		Version26TabBar,
+		Version26TabBarButton
 	} from 'apple-svelte';
 	import './code.css';
 	import './layout.css';
@@ -23,7 +23,7 @@
 
 	let sidebarState = undefined;
 
-	function handleIOS26SidebarPress() {
+	function handleVersion26SidebarPress() {
 		if (sidebarState === 'default') {
 			sidebarState = 'hidden';
 		} else {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	/* IOS26Sidebar section items. */
+	/* Version26Sidebar section items. */
 	let sidebarAboutSectionItems = [
 		{
 			title: 'Home',
@@ -206,18 +206,18 @@
 </svelte:head>
 
 <main>
-	<IOS26Sidebar bind:state={sidebarState} id="sidebar">
-		<IOS26SidebarNavigationBar {title}>
-			<IOS26SidebarNavigationBarLeading
+	<Version26Sidebar bind:state={sidebarState} id="sidebar">
+		<Version26SidebarNavigationBar {title}>
+			<Version26SidebarNavigationBarLeading
 				slot="leading"
 				symbol="thumbnail_bar"
-				onPress={handleIOS26SidebarPress}
+				onPress={handleVersion26SidebarPress}
 			/>
-		</IOS26SidebarNavigationBar>
-		<IOS26SidebarSection showHeading heading="About">
+		</Version26SidebarNavigationBar>
+		<Version26SidebarSection showHeading heading="About">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<IOS26SidebarSectionItem
+					<Version26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
@@ -226,7 +226,7 @@
 						symbol={sidebarSectionItem.symbol}
 					/>
 				{:else}
-					<IOS26SidebarSectionItem
+					<Version26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
@@ -235,7 +235,7 @@
 					/>
 				{/if}
 			{/each}
-			<IOS26SidebarSectionItem
+			<Version26SidebarSectionItem
 				behavior="hyperlink"
 				href="https://github.com/Carza-104/apple-svelte"
 				inputGroup="redirect-1"
@@ -244,7 +244,7 @@
 				imageType="bitmap"
 				image="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
 			/>
-			<IOS26SidebarSectionItem
+			<Version26SidebarSectionItem
 				behavior="hyperlink"
 				href="https://www.npmjs.com/package/apple-svelte"
 				inputGroup="redirect-2"
@@ -253,11 +253,11 @@
 				imageType="bitmap"
 				image="https://avatars.githubusercontent.com/u/6078720?s=200&v=4"
 			/>
-		</IOS26SidebarSection>
-		<IOS26SidebarSection showHeading heading="Components">
+		</Version26SidebarSection>
+		<Version26SidebarSection showHeading heading="Components">
 			{#each sidebarComponentsSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<IOS26SidebarSectionItem
+					<Version26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
@@ -266,7 +266,7 @@
 						symbol={sidebarSectionItem.symbol}
 					/>
 				{:else}
-					<IOS26SidebarSectionItem
+					<Version26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
@@ -275,8 +275,8 @@
 					/>
 				{/if}
 			{/each}
-		</IOS26SidebarSection>
-	</IOS26Sidebar>
+		</Version26SidebarSection>
+	</Version26Sidebar>
 	<div class="main">
 		<NavigationBar
 			showBackground
@@ -287,22 +287,22 @@
 			<NavigationBarTrailing
 				slot="leading"
 				symbol="thumbnail_bar"
-				onPress={handleIOS26SidebarPress}
+				onPress={handleVersion26SidebarPress}
 			/>
 		</NavigationBar>
 		<div class="banner">
-			<IOS26ListRowImage type="symbol" symbol="report" />
+			<Version26ListRowImage type="symbol" symbol="report" />
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<IOS26TabBar
+		<Version26TabBar
 			id="tab-bar"
 			style="margin: -24px -16px; opacity: 0%; padding: 38px 30px 72px; position: unset"
 		/>
-		<IOS26TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
+		<Version26TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<IOS26TabBarButton
+					<Version26TabBarButton
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected"
@@ -310,7 +310,7 @@
 						label={sidebarSectionItem.title}
 					/>
 				{:else}
-					<IOS26TabBarButton
+					<Version26TabBarButton
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						symbol={sidebarSectionItem.symbol}
@@ -318,13 +318,13 @@
 					/>
 				{/if}
 			{/each}
-			<IOS26TabBarButton
+			<Version26TabBarButton
 				behavior="hyperlink"
 				href="/components"
 				symbol="stack"
 				label="Components"
 			/>
-		</IOS26TabBar>
+		</Version26TabBar>
 	</div>
 </main>
 

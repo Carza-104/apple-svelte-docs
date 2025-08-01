@@ -1,5 +1,5 @@
 export let code = `<script>
-	import { IOS26Toolbar, IOS26ToolbarButton } from 'apple-svelte';
+	import { Version26Toolbar, Version26ToolbarButton } from 'apple-svelte';
 </script>
 
 <svelte:head>
@@ -10,9 +10,9 @@ export let code = `<script>
 	/>
 </svelte:head>
 
-<IOS26Toolbar>
-	<IOS26ToolbarButton />
-	<IOS26ToolbarButton />
-	<IOS26ToolbarButton />
-</IOS26Toolbar>
+<Version26Toolbar>
+	<Version26ToolbarButton />
+	<Version26ToolbarButton />
+	<Version26ToolbarButton />
+</Version26Toolbar>
 `;

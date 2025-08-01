@@ -1,16 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26Button,
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton,
-		IOS26Sidebar,
-		IOS26SidebarNavigationBar,
-		IOS26SidebarNavigationBarLeading,
-		IOS26SidebarNavigationBarTrailing,
-		IOS26SidebarSection,
-		IOS26SidebarSectionAddItemButton,
-		IOS26SidebarSectionItem
+		Version26Button,
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		Version26Sidebar,
+		Version26SidebarNavigationBar,
+		Version26SidebarNavigationBarLeading,
+		Version26SidebarNavigationBarTrailing,
+		Version26SidebarSection,
+		Version26SidebarSectionAddItemButton,
+		Version26SidebarSectionItem
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -432,55 +432,55 @@
 	You can nest sidebar section items inside each other as long as their <code>showDisclosure</code>
 	prop is set to <code>true</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	{#if state === 'default'}
-		<IOS26Button type="bezeled" symbol="visibility" label="Hide sidebar" onPress={handlePress} />
+		<Version26Button symbol="visibility" label="Hide sidebar" onPress={handlePress} />
 	{:else}
-		<IOS26Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
+		<Version26Button symbol="visibility" label="Show sidebar" onPress={handlePress} />
 	{/if}
 
-	<IOS26Sidebar
+	<Version26Sidebar
 		bind:state
 		style="position: unset; background: var(--materials-regular); border-radius: 10px; z-index: 0"
 	>
-		<IOS26SidebarNavigationBar>
-			<IOS26SidebarNavigationBarLeading slot="leading" />
-			<IOS26SidebarNavigationBarTrailing slot="trailing" />
-		</IOS26SidebarNavigationBar>
-		<IOS26SidebarSection showHeading heading="Home">
-			<IOS26SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
-			<IOS26SidebarSectionItem showImage showDisclosure>
-				<IOS26SidebarSectionItem indentLevel="1" showImage showDisclosure>
-					<IOS26SidebarSectionItem indentLevel="2" showImage showDisclosure>
-						<IOS26SidebarSectionItem indentLevel="3" showImage showDisclosure>
-							<IOS26SidebarSectionItem
+		<Version26SidebarNavigationBar>
+			<Version26SidebarNavigationBarLeading slot="leading" />
+			<Version26SidebarNavigationBarTrailing slot="trailing" />
+		</Version26SidebarNavigationBar>
+		<Version26SidebarSection showHeading heading="Home">
+			<Version26SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
+			<Version26SidebarSectionItem showImage showDisclosure>
+				<Version26SidebarSectionItem indentLevel="1" showImage showDisclosure>
+					<Version26SidebarSectionItem indentLevel="2" showImage showDisclosure>
+						<Version26SidebarSectionItem indentLevel="3" showImage showDisclosure>
+							<Version26SidebarSectionItem
 								inputGroup="preview"
 								indentLevel="4"
 								showImage
 								showTrailingSymbol
 							/>
-						</IOS26SidebarSectionItem>
-					</IOS26SidebarSectionItem>
-				</IOS26SidebarSectionItem>
-			</IOS26SidebarSectionItem>
-			<IOS26SidebarSectionAddItemButton />
-		</IOS26SidebarSection>
-	</IOS26Sidebar>
+						</Version26SidebarSectionItem>
+					</Version26SidebarSectionItem>
+				</Version26SidebarSectionItem>
+			</Version26SidebarSectionItem>
+			<Version26SidebarSectionAddItemButton />
+		</Version26SidebarSection>
+	</Version26Sidebar>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26Sidebar</code>
+		<code class="title3-emphasized">Version26Sidebar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -497,7 +497,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarNavigationBar</code>
+		<code class="title3-emphasized">Version26SidebarNavigationBar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -514,7 +514,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarNavigationBarLeading</code>
+		<code class="title3-emphasized">Version26SidebarNavigationBarLeading</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -531,7 +531,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarNavigationBarTrailing</code>
+		<code class="title3-emphasized">Version26SidebarNavigationBarTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -548,7 +548,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarSection</code>
+		<code class="title3-emphasized">Version26SidebarSection</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -565,7 +565,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarSectionAddItemButton</code>
+		<code class="title3-emphasized">Version26SidebarSectionAddItemButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -582,7 +582,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26SidebarSectionItem</code>
+		<code class="title3-emphasized">Version26SidebarSectionItem</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

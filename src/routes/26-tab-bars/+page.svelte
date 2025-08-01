@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		IOS26SegmentedControl,
-		IOS26SegmentedControlButton,
-		IOS26TabBar,
-		IOS26TabBarButton
+		Version26SegmentedControl,
+		Version26SegmentedControlButton,
+		Version26TabBar,
+		Version26TabBarButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -97,29 +97,29 @@
 	To actually make tab bar buttons work you can have them redirect the user to a separate page with
 	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
 </p>
-<IOS26SegmentedControl>
-	<IOS26SegmentedControlButton
+<Version26SegmentedControl>
+	<Version26SegmentedControlButton
 		state="selected"
 		label="Preview"
 		onPress={() => (panel = 'preview')}
 	/>
-	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</IOS26SegmentedControl>
+	<Version26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<Version26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<div>
-		<IOS26TabBar style="position: unset">
-			<IOS26TabBarButton />
-			<IOS26TabBarButton />
-			<IOS26TabBarButton />
-		</IOS26TabBar>
+		<Version26TabBar style="position: unset">
+			<Version26TabBarButton />
+			<Version26TabBarButton />
+			<Version26TabBarButton />
+		</Version26TabBar>
 	</div>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">IOS26TabBar</code>
+		<code class="title3-emphasized">Version26TabBar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -136,7 +136,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">IOS26TabBarButton</code>
+		<code class="title3-emphasized">Version26TabBarButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

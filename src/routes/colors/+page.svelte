@@ -1,5 +1,10 @@
 <script>
-	import { Collection, IOS26List, IOS26ListRow, IOS26ListRowDefaultTrailing } from 'apple-svelte';
+	import {
+		Collection,
+		Version26List,
+		Version26ListRow,
+		Version26ListRowDefaultTrailing
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -92,132 +97,132 @@
 </p>
 <Code {code} />
 <Collection>
-	<IOS26List showHeader header="Colors">
+	<Version26List showHeader header="Colors">
 		{#each colors as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Colors 2">
+	</Version26List>
+	<Version26List showHeader header="Colors 2">
 		{#each colorsSecondary as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Grays">
+	</Version26List>
+	<Version26List showHeader header="Grays">
 		{#each grays as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Backgrounds">
+	</Version26List>
+	<Version26List showHeader header="Backgrounds">
 		{#each backgrounds as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Labels">
+	</Version26List>
+	<Version26List showHeader header="Labels">
 		{#each labels as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Separators">
+	</Version26List>
+	<Version26List showHeader header="Separators">
 		{#each separators as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Grouped backgrounds">
+	</Version26List>
+	<Version26List showHeader header="Grouped backgrounds">
 		{#each groupedBackgrounds as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
-	<IOS26List showHeader header="Fills">
+	</Version26List>
+	<Version26List showHeader header="Fills">
 		{#each fills as color}
-			<IOS26ListRow title={color.name}>
+			<Version26ListRow title={color.name}>
 				<div
 					slot="image"
 					style="background: {color.code}; border-radius: 7px; height: 30px; width: 30px"
 				/>
-				<IOS26ListRowDefaultTrailing
+				<Version26ListRowDefaultTrailing
 					slot="trailing"
 					showSymbol
 					symbol="stack"
 					onSymbolPress={() => copy(color.code)}
 				/>
-			</IOS26ListRow>
+			</Version26ListRow>
 		{/each}
-	</IOS26List>
+	</Version26List>
 </Collection>
