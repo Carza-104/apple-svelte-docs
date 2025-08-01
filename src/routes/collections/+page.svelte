@@ -6,8 +6,8 @@
 		ListRow,
 		ListRowImage,
 		ListRowToggleTrailing,
-		SegmentedControl,
-		SegmentedControlButton
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -40,11 +40,11 @@
 
 <p>Collections are simple layout components that work best when wrapped around multiple lists.</p>
 <p>On smaller screens, collections automatically switch from a grid layout to a row one.</p>
-<SegmentedControl>
-	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</SegmentedControl>
+<IOS26SegmentedControl>
+	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<Collection>

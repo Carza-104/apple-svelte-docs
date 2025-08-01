@@ -12,8 +12,8 @@
 		NavigationBarTrailing,
 		PageControl,
 		PageControlButton,
-		SegmentedControl,
-		SegmentedControlButton
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -89,11 +89,11 @@
 	Page control components display a row of pages in a list. You can have page control buttons call
 	any function when pressed, but it's recommended you use this to conditionally render content.
 </p>
-<SegmentedControl>
-	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</SegmentedControl>
+<IOS26SegmentedControl>
+	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	{#if state === 1}

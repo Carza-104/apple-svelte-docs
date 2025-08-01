@@ -6,16 +6,16 @@
 
 	import { page } from '$app/stores';
 	import {
-		ListRowImage,
+		IOS26ListRowImage,
 		NavigationBar,
 		NavigationBarTrailing,
-		Sidebar,
-		SidebarNavigationBar,
-		SidebarNavigationBarLeading,
-		SidebarSection,
-		SidebarSectionItem,
-		TabBar,
-		TabBarButton
+		IOS26Sidebar,
+		IOS26SidebarNavigationBar,
+		IOS26SidebarNavigationBarLeading,
+		IOS26SidebarSection,
+		IOS26SidebarSectionItem,
+		IOS26TabBar,
+		IOS26TabBarButton
 	} from 'apple-svelte';
 	import './code.css';
 	import './layout.css';
@@ -23,7 +23,7 @@
 
 	let sidebarState = undefined;
 
-	function handleSidebarPress() {
+	function handleIOS26SidebarPress() {
 		if (sidebarState === 'default') {
 			sidebarState = 'hidden';
 		} else {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	/* Sidebar section items. */
+	/* IOS26Sidebar section items. */
 	let sidebarAboutSectionItems = [
 		{
 			title: 'Home',
@@ -77,14 +77,29 @@
 			redirect: '/action-sheets'
 		},
 		{
+			title: '(iOS 26) Action Sheets',
+			symbol: 'crop_5_4',
+			redirect: '/26-action-sheets'
+		},
+		{
 			title: 'Alerts',
 			symbol: 'crop_5_4',
 			redirect: '/alerts'
 		},
 		{
+			title: '(iOS 26) Alerts',
+			symbol: 'crop_5_4',
+			redirect: '/26-alerts'
+		},
+		{
 			title: 'Buttons',
 			symbol: 'touch_app',
 			redirect: '/buttons'
+		},
+		{
+			title: '(iOS 26) Buttons',
+			symbol: 'touch_app',
+			redirect: '/26-buttons'
 		},
 		{
 			title: 'Collections',
@@ -95,6 +110,11 @@
 			title: 'Lists',
 			symbol: 'table_rows',
 			redirect: '/lists'
+		},
+		{
+			title: '(iOS 26) Lists',
+			symbol: 'table_rows',
+			redirect: '/26-lists'
 		},
 		{
 			title: 'Navigation Bars',
@@ -117,9 +137,19 @@
 			redirect: '/segmented-controls'
 		},
 		{
+			title: '(iOS 26) Segmented Controls',
+			symbol: 'view_column',
+			redirect: '/26-segmented-controls'
+		},
+		{
 			title: 'Sidebars',
 			symbol: 'thumbnail_bar',
 			redirect: '/sidebars'
+		},
+		{
+			title: '(iOS 26) Sidebars',
+			symbol: 'thumbnail_bar',
+			redirect: '/26-sidebars'
 		},
 		{
 			title: 'Tab Bars',
@@ -127,9 +157,19 @@
 			redirect: '/tab-bars'
 		},
 		{
+			title: '(iOS 26) Tab Bars',
+			symbol: 'crop_16_9',
+			redirect: '/26-tab-bars'
+		},
+		{
 			title: 'Toolbars',
 			symbol: 'crop_16_9',
 			redirect: '/toolbars'
+		},
+		{
+			title: '(iOS 26) Toolbars',
+			symbol: 'crop_16_9',
+			redirect: '/26-toolbars'
 		}
 	];
 </script>
@@ -139,7 +179,7 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 	/>
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="apple-mobile-web-app-title" content="apple-svelte" />
 	<meta
@@ -166,18 +206,18 @@
 </svelte:head>
 
 <main>
-	<Sidebar bind:state={sidebarState} id="sidebar">
-		<SidebarNavigationBar {title}>
-			<SidebarNavigationBarLeading
+	<IOS26Sidebar bind:state={sidebarState} id="sidebar">
+		<IOS26SidebarNavigationBar {title}>
+			<IOS26SidebarNavigationBarLeading
 				slot="leading"
 				symbol="thumbnail_bar"
-				onPress={handleSidebarPress}
+				onPress={handleIOS26SidebarPress}
 			/>
-		</SidebarNavigationBar>
-		<SidebarSection showHeading heading="About">
+		</IOS26SidebarNavigationBar>
+		<IOS26SidebarSection showHeading heading="About">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<SidebarSectionItem
+					<IOS26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
@@ -186,7 +226,7 @@
 						symbol={sidebarSectionItem.symbol}
 					/>
 				{:else}
-					<SidebarSectionItem
+					<IOS26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
@@ -195,7 +235,7 @@
 					/>
 				{/if}
 			{/each}
-			<SidebarSectionItem
+			<IOS26SidebarSectionItem
 				behavior="hyperlink"
 				href="https://github.com/Carza-104/apple-svelte"
 				inputGroup="redirect-1"
@@ -204,7 +244,7 @@
 				imageType="bitmap"
 				image="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
 			/>
-			<SidebarSectionItem
+			<IOS26SidebarSectionItem
 				behavior="hyperlink"
 				href="https://www.npmjs.com/package/apple-svelte"
 				inputGroup="redirect-2"
@@ -213,11 +253,11 @@
 				imageType="bitmap"
 				image="https://avatars.githubusercontent.com/u/6078720?s=200&v=4"
 			/>
-		</SidebarSection>
-		<SidebarSection showHeading heading="Components">
+		</IOS26SidebarSection>
+		<IOS26SidebarSection showHeading heading="Components">
 			{#each sidebarComponentsSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<SidebarSectionItem
+					<IOS26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected-secondary"
@@ -226,7 +266,7 @@
 						symbol={sidebarSectionItem.symbol}
 					/>
 				{:else}
-					<SidebarSectionItem
+					<IOS26SidebarSectionItem
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						title={sidebarSectionItem.title}
@@ -235,8 +275,8 @@
 					/>
 				{/if}
 			{/each}
-		</SidebarSection>
-	</Sidebar>
+		</IOS26SidebarSection>
+	</IOS26Sidebar>
 	<div class="main">
 		<NavigationBar
 			showBackground
@@ -244,21 +284,25 @@
 			{title}
 			style="margin: -24px -16px 0px; padding-top: 27px"
 		>
-			<NavigationBarTrailing slot="leading" symbol="thumbnail_bar" onPress={handleSidebarPress} />
+			<NavigationBarTrailing
+				slot="leading"
+				symbol="thumbnail_bar"
+				onPress={handleIOS26SidebarPress}
+			/>
 		</NavigationBar>
 		<div class="banner">
-			<ListRowImage type="symbol" symbol="report" />
+			<IOS26ListRowImage type="symbol" symbol="report" />
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<TabBar
+		<IOS26TabBar
 			id="tab-bar"
 			style="margin: -24px -16px; opacity: 0%; padding: 38px 30px 72px; position: unset"
 		/>
-		<TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
+		<IOS26TabBar id="tab-bar" style="margin: 0px -16px 0px; width: calc(100% - 30px)">
 			{#each sidebarAboutSectionItems as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
-					<TabBarButton
+					<IOS26TabBarButton
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						state="selected"
@@ -266,7 +310,7 @@
 						label={sidebarSectionItem.title}
 					/>
 				{:else}
-					<TabBarButton
+					<IOS26TabBarButton
 						behavior="hyperlink"
 						href={sidebarSectionItem.redirect}
 						symbol={sidebarSectionItem.symbol}
@@ -274,8 +318,13 @@
 					/>
 				{/if}
 			{/each}
-			<TabBarButton behavior="hyperlink" href="/components" symbol="stack" label="Components" />
-		</TabBar>
+			<IOS26TabBarButton
+				behavior="hyperlink"
+				href="/components"
+				symbol="stack"
+				label="Components"
+			/>
+		</IOS26TabBar>
 	</div>
 </main>
 
@@ -295,10 +344,10 @@
 	.banner {
 		align-items: center;
 		background: var(--bg-grouped-secondary);
-		border-radius: 10px;
+		border-radius: 52px;
 		display: flex;
 		gap: 12px;
-		padding: 11px 16px;
+		padding: 15px 16px;
 	}
 
 	/* Hide the sidebar by default on mobile devices. */

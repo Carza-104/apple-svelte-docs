@@ -1,6 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
-	import { List, ListRow, SegmentedControl, SegmentedControlButton } from 'apple-svelte';
+	import {
+		IOS26List,
+		IOS26ListRow,
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton,
+		SegmentedControl,
+		SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -76,11 +83,15 @@
 	You can have segmented control buttons call any function when pressed, but it's recommended you
 	use this to conditionally render content.
 </p>
-<SegmentedControl>
-	<SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
-	<SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
-	<SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
-</SegmentedControl>
+<IOS26SegmentedControl>
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
+	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
+	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
+</IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<SegmentedControl>
@@ -90,23 +101,23 @@
 	</SegmentedControl>
 
 	{#if state === 1}
-		<List>
-			<ListRow title="First page" />
-		</List>
+		<IOS26List>
+			<IOS26ListRow title="First page" />
+		</IOS26List>
 	{:else if state === 2}
-		<List>
-			<ListRow title="Second page" />
-		</List>
+		<IOS26List>
+			<IOS26ListRow title="Second page" />
+		</IOS26List>
 	{:else}
-		<List>
-			<ListRow title="Third page" />
-		</List>
+		<IOS26List>
+			<IOS26ListRow title="Third page" />
+		</IOS26List>
 	{/if}
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">SegmentedControl</code>
+		<code class="title3-emphasized">IOS26SegmentedControl</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -123,7 +134,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SegmentedControlButton</code>
+		<code class="title3-emphasized">IOS26SegmentedControlButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import {
-		Alert,
-		AlertButton,
-		AlertTextField,
+		IOS26Alert,
+		IOS26AlertButton,
+		IOS26AlertTextField,
 		IOS26Button,
 		IOS26SegmentedControl,
 		IOS26SegmentedControlButton
@@ -69,7 +69,7 @@
 			name: 'state',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"default"\n"preferred"'
+			defaultValues: '"primary"\n"secondary"\n"destructive"'
 		},
 		{
 			name: 'label',
@@ -163,17 +163,17 @@
 	<hr />
 	<IOS26Button symbol="visibility" label="Show alert" onPress={() => (state = 'default')} />
 
-	<Alert bind:state showDescription>
-		<AlertTextField slot="text-field" />
-		<AlertButton slot="button-1" state="preferred" />
-		<AlertButton slot="button-2" />
-		<AlertButton slot="button-3" />
-	</Alert>
+	<IOS26Alert bind:state showDescription>
+		<IOS26AlertTextField slot="text-field" />
+		<IOS26AlertButton slot="button-1" state="primary" />
+		<IOS26AlertButton slot="button-2" state="secondary" />
+		<IOS26AlertButton slot="button-3" state="destructive" />
+	</IOS26Alert>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">Alert</code>
+		<code class="title3-emphasized">IOS26Alert</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -190,7 +190,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">AlertButton</code>
+		<code class="title3-emphasized">IOS26AlertButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -207,7 +207,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">AlertTextField</code>
+		<code class="title3-emphasized">IOS26AlertTextField</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

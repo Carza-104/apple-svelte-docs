@@ -1,6 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, TabBar, TabBarButton } from 'apple-svelte';
+	import {
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton,
+		IOS26Toolbar,
+		IOS26ToolbarButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -12,7 +17,7 @@
 		}
 	});
 
-	let tabBarProps = [
+	let toolbarProps = [
 		{
 			name: 'id',
 			description: 'Insert description here.',
@@ -27,42 +32,24 @@
 		}
 	];
 
-	let tabBarButtonProps = [
+	let toolbarButtonProps = [
 		{
-			name: 'behavior',
+			name: 'type',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"default"\n"hyperlink"'
-		},
-		{
-			name: 'href',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"/"'
-		},
-		{
-			name: 'inputGroup',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"tab-bar-button"'
-		},
-		{
-			name: 'state',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"default"\n"selected"'
+			defaultValues: '"symbol"\n"label"'
 		},
 		{
 			name: 'symbol',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"star"'
+			defaultValues: '"select"'
 		},
 		{
 			name: 'label',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"Tab"'
+			defaultValues: '"Action"'
 		},
 		{
 			name: 'id',
@@ -87,28 +74,34 @@
 	let panel = 'preview';
 </script>
 
-<p>If you can, avoid using tab bars on larger screens.</p>
+<p>If you can, avoid using toolbars on larger screens.</p>
 <p>
-	To actually make tab bar buttons work you can have them redirect the user to a separate page with
-	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
+	Toolbar buttons are very straightforward: you can declare a function and have them call it when
+	pressed.
 </p>
 <IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
 	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton />
-		<TabBarButton />
-		<TabBarButton />
-	</TabBar>
+	<div>
+		<IOS26Toolbar style="border-radius: 10px; position: unset; width: 100%">
+			<IOS26ToolbarButton />
+			<IOS26ToolbarButton />
+			<IOS26ToolbarButton />
+		</IOS26Toolbar>
+	</div>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">TabBar</code>
+		<code class="title3-emphasized">IOS26Toolbar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -116,7 +109,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarProps as prop}
+				{#each toolbarProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>
@@ -125,7 +118,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">TabBarButton</code>
+		<code class="title3-emphasized">IOS26ToolbarButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -133,7 +126,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarButtonProps as prop}
+				{#each toolbarButtonProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>
@@ -144,3 +137,14 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	div {
+		background-image: url('https://i.imgur.com/IZXdb9Z.jpeg');
+		background-size: cover;
+		border-radius: 26px;
+		display: flex;
+		padding: 16px;
+		min-width: 50%;
+	}
+</style>

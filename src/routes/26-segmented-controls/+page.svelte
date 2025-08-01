@@ -1,6 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, TabBar, TabBarButton } from 'apple-svelte';
+	import {
+		IOS26List,
+		IOS26ListRow,
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -12,7 +17,7 @@
 		}
 	});
 
-	let tabBarProps = [
+	let segmentedControlProps = [
 		{
 			name: 'id',
 			description: 'Insert description here.',
@@ -27,24 +32,12 @@
 		}
 	];
 
-	let tabBarButtonProps = [
-		{
-			name: 'behavior',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"default"\n"hyperlink"'
-		},
-		{
-			name: 'href',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"/"'
-		},
+	let segmentedControlButtonProps = [
 		{
 			name: 'inputGroup',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"tab-bar-button"'
+			defaultValues: '"segmented-control-button"'
 		},
 		{
 			name: 'state',
@@ -53,16 +46,10 @@
 			defaultValues: '"default"\n"selected"'
 		},
 		{
-			name: 'symbol',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"star"'
-		},
-		{
 			name: 'label',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"Tab"'
+			defaultValues: '"Label"'
 		},
 		{
 			name: 'id',
@@ -85,30 +72,54 @@
 	];
 
 	let panel = 'preview';
+
+	let state = 1;
 </script>
 
-<p>If you can, avoid using tab bars on larger screens.</p>
+<p>Segmented controls provide mutually exclusive buttons to switch between views.</p>
 <p>
-	To actually make tab bar buttons work you can have them redirect the user to a separate page with
-	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
+	You can have segmented control buttons call any function when pressed, but it's recommended you
+	use this to conditionally render content.
 </p>
 <IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
 	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton />
-		<TabBarButton />
-		<TabBarButton />
-	</TabBar>
+	<IOS26SegmentedControl>
+		<IOS26SegmentedControlButton
+			inputGroup="preview"
+			state="selected"
+			onPress={() => (state = 1)}
+		/>
+		<IOS26SegmentedControlButton inputGroup="preview" onPress={() => (state = 2)} />
+		<IOS26SegmentedControlButton inputGroup="preview" onPress={() => (state = 3)} />
+	</IOS26SegmentedControl>
+
+	{#if state === 1}
+		<IOS26List>
+			<IOS26ListRow title="First page" />
+		</IOS26List>
+	{:else if state === 2}
+		<IOS26List>
+			<IOS26ListRow title="Second page" />
+		</IOS26List>
+	{:else}
+		<IOS26List>
+			<IOS26ListRow title="Third page" />
+		</IOS26List>
+	{/if}
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">TabBar</code>
+		<code class="title3-emphasized">IOS26SegmentedControl</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -116,7 +127,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarProps as prop}
+				{#each segmentedControlProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>
@@ -125,7 +136,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">TabBarButton</code>
+		<code class="title3-emphasized">IOS26SegmentedControlButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -133,7 +144,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarButtonProps as prop}
+				{#each segmentedControlButtonProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>

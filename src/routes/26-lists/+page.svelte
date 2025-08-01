@@ -2,17 +2,17 @@
 	import { onMount } from 'svelte';
 	import {
 		Collection,
-		List,
-		ListButtonRow,
-		ListRow,
-		ListRowButtonTrailing,
-		ListRowDefaultTrailing,
-		ListRowDisclosureTrailing,
-		ListRowImage,
-		ListRowStepperTrailing,
-		ListRowToggleTrailing,
-		ListSliderRow,
-		ListTextFieldRow,
+		IOS26List,
+		IOS26ListButtonRow,
+		IOS26ListRow,
+		IOS26ListRowButtonTrailing,
+		IOS26ListRowDefaultTrailing,
+		IOS26ListRowDisclosureTrailing,
+		IOS26ListRowImage,
+		IOS26ListRowStepperTrailing,
+		IOS26ListRowToggleTrailing,
+		IOS26ListSliderRow,
+		IOS26ListTextFieldRow,
 		IOS26SegmentedControl,
 		IOS26SegmentedControlButton
 	} from 'apple-svelte';
@@ -629,48 +629,52 @@
 	layout, you can put lists inside a collection.
 </p>
 <IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
 	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
 	<Collection>
-		<List showHeader showFooter>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowButtonTrailing slot="trailing" />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowDisclosureTrailing slot="trailing" />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowStepperTrailing slot="trailing" />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowToggleTrailing slot="trailing" />
-			</ListRow>
-		</List>
-		<List showHeader showFooter>
-			<ListButtonRow />
-			<ListRow title="Slider value: {sliderValue}" />
-			<ListSliderRow bind:value={sliderValue} showSymbols />
-			<ListRow title="Text field value: {textFieldValue}" />
-			<ListTextFieldRow bind:value={textFieldValue} />
-		</List>
+		<IOS26List showHeader showFooter>
+			<IOS26ListRow>
+				<IOS26ListRowImage slot="image" type="symbol" />
+				<IOS26ListRowButtonTrailing slot="trailing" />
+			</IOS26ListRow>
+			<IOS26ListRow>
+				<IOS26ListRowImage slot="image" type="symbol" />
+				<IOS26ListRowDefaultTrailing slot="trailing" showDetail showDisclosure />
+			</IOS26ListRow>
+			<IOS26ListRow>
+				<IOS26ListRowImage slot="image" type="symbol" />
+				<IOS26ListRowDisclosureTrailing slot="trailing" />
+			</IOS26ListRow>
+			<IOS26ListRow>
+				<IOS26ListRowImage slot="image" type="symbol" />
+				<IOS26ListRowStepperTrailing slot="trailing" />
+			</IOS26ListRow>
+			<IOS26ListRow>
+				<IOS26ListRowImage slot="image" type="symbol" />
+				<IOS26ListRowToggleTrailing slot="trailing" />
+			</IOS26ListRow>
+		</IOS26List>
+		<IOS26List showHeader showFooter>
+			<IOS26ListButtonRow />
+			<IOS26ListRow title="Slider value: {sliderValue}" />
+			<IOS26ListSliderRow bind:value={sliderValue} showSymbols />
+			<IOS26ListRow title="Text field value: {textFieldValue}" />
+			<IOS26ListTextFieldRow bind:value={textFieldValue} />
+		</IOS26List>
 	</Collection>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">List</code>
+		<code class="title3-emphasized">IOS26List</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -687,7 +691,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListButtonRow</code>
+		<code class="title3-emphasized">IOS26ListButtonRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -704,7 +708,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRow</code>
+		<code class="title3-emphasized">IOS26ListRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -721,7 +725,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowButtonTrailing</code>
+		<code class="title3-emphasized">IOS26ListRowButtonTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -738,7 +742,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowDefaultTrailing</code>
+		<code class="title3-emphasized">IOS26ListRowDefaultTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -755,7 +759,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowDisclosureTrailing</code>
+		<code class="title3-emphasized">IOS26ListRowDisclosureTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -772,7 +776,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowImage</code>
+		<code class="title3-emphasized">IOS26ListRowImage</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -789,7 +793,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowStepperTrailing</code>
+		<code class="title3-emphasized">IOS26ListRowStepperTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -806,7 +810,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListRowToggleTrailing</code>
+		<code class="title3-emphasized">IOS26ListRowToggleTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -823,7 +827,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListSliderRow</code>
+		<code class="title3-emphasized">IOS26ListSliderRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -840,7 +844,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">ListTextFieldRow</code>
+		<code class="title3-emphasized">IOS26ListTextFieldRow</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

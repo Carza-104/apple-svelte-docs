@@ -21,7 +21,8 @@
 	"type": "module",
 	"dependencies": {
 		"@vercel/analytics": "^1.1.1",
-		"apple-svelte": "^1.0.9",
+		"apple-svelte": "^2.0.2",
+		"npm": "^11.5.2",
 		"prismjs": "^1.29.0"
 	}
 }

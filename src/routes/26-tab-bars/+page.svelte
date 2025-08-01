@@ -1,6 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, TabBar, TabBarButton } from 'apple-svelte';
+	import {
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton,
+		IOS26TabBar,
+		IOS26TabBarButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -93,22 +98,28 @@
 	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
 </p>
 <IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
 	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton />
-		<TabBarButton />
-		<TabBarButton />
-	</TabBar>
+	<div>
+		<IOS26TabBar style="position: unset">
+			<IOS26TabBarButton />
+			<IOS26TabBarButton />
+			<IOS26TabBarButton />
+		</IOS26TabBar>
+	</div>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">TabBar</code>
+		<code class="title3-emphasized">IOS26TabBar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -125,7 +136,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">TabBarButton</code>
+		<code class="title3-emphasized">IOS26TabBarButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -144,3 +155,14 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	div {
+		background-image: url('https://i.imgur.com/IZXdb9Z.jpeg');
+		background-size: cover;
+		border-radius: 26px;
+		display: flex;
+		padding: 16px;
+		width: min-content;
+	}
+</style>

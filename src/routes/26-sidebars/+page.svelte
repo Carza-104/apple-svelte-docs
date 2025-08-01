@@ -4,13 +4,13 @@
 		IOS26Button,
 		IOS26SegmentedControl,
 		IOS26SegmentedControlButton,
-		Sidebar,
-		SidebarNavigationBar,
-		SidebarNavigationBarLeading,
-		SidebarNavigationBarTrailing,
-		SidebarSection,
-		SidebarSectionAddItemButton,
-		SidebarSectionItem
+		IOS26Sidebar,
+		IOS26SidebarNavigationBar,
+		IOS26SidebarNavigationBarLeading,
+		IOS26SidebarNavigationBarTrailing,
+		IOS26SidebarSection,
+		IOS26SidebarSectionAddItemButton,
+		IOS26SidebarSectionItem
 	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
@@ -449,38 +449,38 @@
 		<IOS26Button type="bezeled" symbol="visibility" label="Show sidebar" onPress={handlePress} />
 	{/if}
 
-	<Sidebar
+	<IOS26Sidebar
 		bind:state
 		style="position: unset; background: var(--materials-regular); border-radius: 10px; z-index: 0"
 	>
-		<SidebarNavigationBar>
-			<SidebarNavigationBarLeading slot="leading" />
-			<SidebarNavigationBarTrailing slot="trailing" />
-		</SidebarNavigationBar>
-		<SidebarSection showHeading heading="Home">
-			<SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
-			<SidebarSectionItem showImage showDisclosure>
-				<SidebarSectionItem indentLevel="1" showImage showDisclosure>
-					<SidebarSectionItem indentLevel="2" showImage showDisclosure>
-						<SidebarSectionItem indentLevel="3" showImage showDisclosure>
-							<SidebarSectionItem
+		<IOS26SidebarNavigationBar>
+			<IOS26SidebarNavigationBarLeading slot="leading" />
+			<IOS26SidebarNavigationBarTrailing slot="trailing" />
+		</IOS26SidebarNavigationBar>
+		<IOS26SidebarSection showHeading heading="Home">
+			<IOS26SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
+			<IOS26SidebarSectionItem showImage showDisclosure>
+				<IOS26SidebarSectionItem indentLevel="1" showImage showDisclosure>
+					<IOS26SidebarSectionItem indentLevel="2" showImage showDisclosure>
+						<IOS26SidebarSectionItem indentLevel="3" showImage showDisclosure>
+							<IOS26SidebarSectionItem
 								inputGroup="preview"
 								indentLevel="4"
 								showImage
 								showTrailingSymbol
 							/>
-						</SidebarSectionItem>
-					</SidebarSectionItem>
-				</SidebarSectionItem>
-			</SidebarSectionItem>
-			<SidebarSectionAddItemButton />
-		</SidebarSection>
-	</Sidebar>
+						</IOS26SidebarSectionItem>
+					</IOS26SidebarSectionItem>
+				</IOS26SidebarSectionItem>
+			</IOS26SidebarSectionItem>
+			<IOS26SidebarSectionAddItemButton />
+		</IOS26SidebarSection>
+	</IOS26Sidebar>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">Sidebar</code>
+		<code class="title3-emphasized">IOS26Sidebar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -497,7 +497,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarNavigationBar</code>
+		<code class="title3-emphasized">IOS26SidebarNavigationBar</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -514,7 +514,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarNavigationBarLeading</code>
+		<code class="title3-emphasized">IOS26SidebarNavigationBarLeading</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -531,7 +531,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarNavigationBarTrailing</code>
+		<code class="title3-emphasized">IOS26SidebarNavigationBarTrailing</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -548,7 +548,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarSection</code>
+		<code class="title3-emphasized">IOS26SidebarSection</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -565,7 +565,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarSectionAddItemButton</code>
+		<code class="title3-emphasized">IOS26SidebarSectionAddItemButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -582,7 +582,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">SidebarSectionItem</code>
+		<code class="title3-emphasized">IOS26SidebarSectionItem</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">

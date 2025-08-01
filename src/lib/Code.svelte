@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { ListRow, ListRowDefaultTrailing } from 'apple-svelte';
+	import { IOS26ListRow, IOS26ListRowDefaultTrailing } from 'apple-svelte';
 	import Prism from 'prismjs';
 
 	export let title = '+page.svelte';
@@ -28,9 +28,9 @@
 </script>
 
 <div class="code" {id} {style}>
-	<ListRow {title} style="color: var(--labels-secondary)">
-		<ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
-	</ListRow>
+	<IOS26ListRow {title} style="color: var(--labels-secondary)">
+		<IOS26ListRowDefaultTrailing slot="trailing" showSymbol {symbol} onSymbolPress={copy} />
+	</IOS26ListRow>
 	<div class="field {elementClass}">
 		<code class="body">{@html Prism.highlight(code, Prism.languages.markup, 'markup')}</code>
 	</div>
@@ -39,14 +39,14 @@
 <style>
 	.code {
 		background: var(--bg-grouped-secondary);
-		border-radius: 10px;
+		border-radius: 26px;
 		overflow: hidden;
 		tab-size: 4;
 	}
 
 	.field {
 		overflow-x: auto;
-		padding: 11px 16px;
+		padding: 15px 16px;
 	}
 
 	.windows::-webkit-scrollbar {

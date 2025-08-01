@@ -1,6 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-	import { IOS26SegmentedControl, IOS26SegmentedControlButton, TabBar, TabBarButton } from 'apple-svelte';
+	import {
+		IOS26ActionSheet,
+		IOS26ActionSheetButton,
+		IOS26Button,
+		IOS26SegmentedControl,
+		IOS26SegmentedControlButton
+	} from 'apple-svelte';
 	import Code from '$lib/Code.svelte';
 	import { code } from './code';
 
@@ -12,7 +18,37 @@
 		}
 	});
 
-	let tabBarProps = [
+	let actionSheetProps = [
+		{
+			name: 'state',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"default"\n"hidden"'
+		},
+		{
+			name: 'showHeader',
+			description: 'Insert description here.',
+			type: 'Boolean',
+			defaultValues: 'false\ntrue'
+		},
+		{
+			name: 'headerTitle',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"Header Title"'
+		},
+		{
+			name: 'showDescription',
+			description: 'Insert description here.',
+			type: 'Boolean',
+			defaultValues: 'false\ntrue'
+		},
+		{
+			name: 'headerDescription',
+			description: 'Insert description here.',
+			type: 'String',
+			defaultValues: '"A message should be a short, complete sentence."'
+		},
 		{
 			name: 'id',
 			description: 'Insert description here.',
@@ -21,48 +57,24 @@
 		},
 		{
 			name: 'style',
-			description: '',
+			description: 'Insert description here.',
 			type: 'String',
 			defaultValues: 'undefined'
 		}
 	];
 
-	let tabBarButtonProps = [
-		{
-			name: 'behavior',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"default"\n"hyperlink"'
-		},
-		{
-			name: 'href',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"/"'
-		},
-		{
-			name: 'inputGroup',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"tab-bar-button"'
-		},
+	let actionSheetButtonProps = [
 		{
 			name: 'state',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"default"\n"selected"'
-		},
-		{
-			name: 'symbol',
-			description: 'Insert description here.',
-			type: 'String',
-			defaultValues: '"star"'
+			defaultValues: '"primary"\n"secondary"\n"destructive"'
 		},
 		{
 			name: 'label',
 			description: 'Insert description here.',
 			type: 'String',
-			defaultValues: '"Tab"'
+			defaultValues: '"Action"'
 		},
 		{
 			name: 'id',
@@ -78,37 +90,46 @@
 		},
 		{
 			name: 'style',
-			description: '',
+			description: 'Insert description here.',
 			type: 'String',
 			defaultValues: 'undefined'
 		}
 	];
 
 	let panel = 'preview';
+
+	let state = 'hidden';
 </script>
 
-<p>If you can, avoid using tab bars on larger screens.</p>
+<p>Action sheets are modal views that offer multiple choices.</p>
 <p>
-	To actually make tab bar buttons work you can have them redirect the user to a separate page with
-	the <code>behavior</code> prop set to <code>"hyperlink"</code>.
+	You can bind the action sheet's <code>state</code> prop to a variable to better control when the component
+	is shown.
 </p>
+<p>As all modal views, action sheets can be hidden by pressing outside them or with the Esc key.</p>
 <IOS26SegmentedControl>
-	<IOS26SegmentedControlButton state="selected" label="Preview" onPress={() => (panel = 'preview')} />
+	<IOS26SegmentedControlButton
+		state="selected"
+		label="Preview"
+		onPress={() => (panel = 'preview')}
+	/>
 	<IOS26SegmentedControlButton label="Code" onPress={() => (panel = 'code')} />
 	<IOS26SegmentedControlButton label="Props" onPress={() => (panel = 'props')} />
 </IOS26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<TabBar style="border-radius: 10px; position: unset">
-		<TabBarButton />
-		<TabBarButton />
-		<TabBarButton />
-	</TabBar>
+	<IOS26Button symbol="visibility" label="Show action sheet" onPress={() => (state = 'default')} />
+
+	<IOS26ActionSheet bind:state showHeader showDescription>
+		<IOS26ActionSheetButton state="primary" />
+		<IOS26ActionSheetButton state="secondary" />
+		<IOS26ActionSheetButton state="destructive" />
+	</IOS26ActionSheet>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
 	<div class="table-container">
-		<code class="title3-emphasized">TabBar</code>
+		<code class="title3-emphasized">IOS26ActionSheet</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -116,7 +137,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarProps as prop}
+				{#each actionSheetProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>
@@ -125,7 +146,7 @@
 				{/each}
 			</table>
 		</div>
-		<code class="title3-emphasized">TabBarButton</code>
+		<code class="title3-emphasized">IOS26ActionSheetButton</code>
 		<div class="table {elementClass}">
 			<table>
 				<tr class="headline">
@@ -133,7 +154,7 @@
 					<td>Type</td>
 					<td>Default values</td>
 				</tr>
-				{#each tabBarButtonProps as prop}
+				{#each actionSheetButtonProps as prop}
 					<tr>
 						<td><code>{prop.name}</code></td>
 						<td>{prop.type}</td>
