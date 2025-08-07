@@ -109,7 +109,7 @@
 {#if panel === 'preview'}
 	<hr />
 	<div>
-		<Version26TabBar style="position: unset">
+		<Version26TabBar style="position: relative">
 			<Version26TabBarButton />
 			<Version26TabBarButton />
 			<Version26TabBarButton />

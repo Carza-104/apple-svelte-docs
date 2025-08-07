@@ -449,10 +449,7 @@
 		<Version26Button symbol="visibility" label="Show sidebar" onPress={handlePress} />
 	{/if}
 
-	<Version26Sidebar
-		bind:state
-		style="position: unset; background: var(--materials-regular); border-radius: 10px; z-index: 0"
-	>
+	<Version26Sidebar bind:state style="position: relative; border-radius: 10px; z-index: 0">
 		<Version26SidebarNavigationBar>
 			<Version26SidebarNavigationBarLeading slot="leading" />
 			<Version26SidebarNavigationBarTrailing slot="trailing" />

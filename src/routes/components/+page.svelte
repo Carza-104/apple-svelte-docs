@@ -1,6 +1,11 @@
 <script>
 	/* This page is only visible on mobile devices since you can select components from the sidebar on bigger screens. */
-	import { List, ListRow, ListRowDefaultTrailing, ListRowImage } from 'apple-svelte';
+	import {
+		Version26List,
+		Version26ListRow,
+		Version26ListRowDefaultTrailing,
+		Version26ListRowImage
+	} from 'apple-svelte';
 
 	let listRowItems = [
 		{
@@ -124,17 +129,17 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-<List>
+<Version26List>
 	{#each listRowItems as listRowItem}
-		<ListRow title={listRowItem.title}>
-			<ListRowImage slot="image" type="symbol" symbol={listRowItem.symbol} />
-			<ListRowDefaultTrailing
+		<Version26ListRow title={listRowItem.title}>
+			<Version26ListRowImage slot="image" type="symbol" symbol={listRowItem.symbol} />
+			<Version26ListRowDefaultTrailing
 				slot="trailing"
 				showDisclosure
 				onDisclosurePress={() => {
 					redirect(listRowItem.redirect);
 				}}
 			/>
-		</ListRow>
+		</Version26ListRow>
 	{/each}
-</List>
+</Version26List>

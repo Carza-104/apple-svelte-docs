@@ -282,7 +282,7 @@
 			showBackground
 			size="large"
 			{title}
-			style="margin: -24px -16px 0px 0px; padding-top: 27px"
+			style="margin: -24px -16px 0px; padding-top: 27px"
 		>
 			<NavigationBarTrailing
 				slot="leading"
