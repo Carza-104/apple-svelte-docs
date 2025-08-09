@@ -59,6 +59,11 @@
 			redirect: '/colors'
 		},
 		{
+			title: 'Liquid Glass',
+			symbol: 'crop_5_4',
+			redirect: '/liquid-glass'
+		},
+		{
 			title: 'Text',
 			symbol: 'match_case',
 			redirect: '/text'
