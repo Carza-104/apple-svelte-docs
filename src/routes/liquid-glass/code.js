@@ -26,17 +26,17 @@ export let code = `<!doctype html>
 	/* Only apply this to Blink instead of WebKit: */
 	@supports (-webkit-app-region: inherit) {
 		.liquid-glass-small {
-			backdrop-filter: blur(calc(var(--liquid-glass-small-background-blur-addend) / 2))
+			backdrop-filter: blur(var(--liquid-glass-small-background-blur-addend))
 				url(#displacementDistortionFilter);
 		}
 
 		.liquid-glass-medium {
-			backdrop-filter: blur(calc(var(--liquid-glass-medium-background-blur-addend) / 2))
+			backdrop-filter: blur(var(--liquid-glass-medium-background-blur-addend))
 				url(#displacementDistortionFilter);
 		}
 
 		.liquid-glass-large {
-			backdrop-filter: blur(calc(var(--liquid-glass-large-background-blur-addend) / 2))
+			backdrop-filter: blur(var(--liquid-glass-large-background-blur-addend))
 				url(#displacementDistortionFilter);
 		}
 	}
