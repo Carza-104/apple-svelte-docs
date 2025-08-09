@@ -108,7 +108,7 @@
 </Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<div>
+	<div class="preview">
 		<Version26TabBar style="position: relative">
 			<Version26TabBarButton />
 			<Version26TabBarButton />
@@ -161,7 +161,7 @@
 {/if}
 
 <style>
-	div {
+	.preview {
 		background-image: url('https://i.imgur.com/IZXdb9Z.jpeg');
 		background-size: cover;
 		border-radius: 26px;

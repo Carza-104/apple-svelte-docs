@@ -90,7 +90,7 @@
 </Version26SegmentedControl>
 {#if panel === 'preview'}
 	<hr />
-	<div>
+	<div class="preview">
 		<Version26Toolbar style="border-radius: 10px; position: unset; width: 100%">
 			<Version26ToolbarButton />
 			<Version26ToolbarButton />
@@ -143,7 +143,7 @@
 {/if}
 
 <style>
-	div {
+	.preview {
 		background-image: url('https://i.imgur.com/IZXdb9Z.jpeg');
 		background-size: cover;
 		border-radius: 26px;
