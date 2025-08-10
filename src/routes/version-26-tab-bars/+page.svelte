@@ -166,6 +166,7 @@
 		background-size: cover;
 		border-radius: 26px;
 		display: flex;
+		max-width: calc(100vw - 64px);
 		padding: 16px;
 		width: min-content;
 	}

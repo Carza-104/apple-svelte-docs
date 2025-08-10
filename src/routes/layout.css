@@ -32,6 +32,10 @@ td {
 	padding: 15px 16px;
 }
 
+.title3-emphasized {
+	max-width: calc(100vw - 64px);
+}
+
 td:first-child {
 	border-left: unset;
 }

@@ -301,6 +301,7 @@
 		</div>
 		<slot />
 		<!-- <Version26TabBar id="tab-bar" style="opacity: 0%; padding-top: 16px; position: unset" /> -->
+		<div class="tab-bar-placeholder"></div>
 		<Version26TabBar id="tab-bar" style="margin: 16px 12px 32px; width: calc(100% - 64px)">
 			{#each sidebarAboutSectionItems.slice(0, 2) as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
@@ -352,6 +353,10 @@
 		padding: 15px 16px;
 	}
 
+	.tab-bar-placeholder {
+		height: 90px;
+	}
+
 	/* Hide the sidebar by default on mobile devices. */
 	@media (max-width: 592px) {
 		main :global(#sidebar) {
@@ -361,6 +366,10 @@
 
 	/* Hide the tab bar by default on larger devices. */
 	@media (min-width: 593px) {
+		.tab-bar-placeholder {
+			display: none;
+		}
+
 		main :global(#tab-bar) {
 			display: none;
 		}
