@@ -33,7 +33,8 @@ td {
 }
 
 .title3-emphasized {
-	max-width: calc(100vw - 64px);
+	/* max-width: calc(100vw - 64px); */
+	overflow-wrap: break-word;
 }
 
 td:first-child {
