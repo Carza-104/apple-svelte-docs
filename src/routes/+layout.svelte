@@ -300,7 +300,7 @@
 			<p>apple-svelte isn't affiliated with or endorsed by Apple.</p>
 		</div>
 		<slot />
-		<Version26TabBar id="tab-bar" style="opacity: 0%; padding-top: 16px; position: unset" />
+		<!-- <Version26TabBar id="tab-bar" style="opacity: 0%; padding-top: 16px; position: unset" /> -->
 		<Version26TabBar id="tab-bar" style="margin: 16px 12px 32px; width: calc(100% - 64px)">
 			{#each sidebarAboutSectionItems.slice(0, 2) as sidebarSectionItem}
 				{#if sidebarSectionItem.title === title}
