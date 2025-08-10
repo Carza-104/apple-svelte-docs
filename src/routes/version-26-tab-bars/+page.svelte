@@ -170,4 +170,10 @@
 		padding: 16px;
 		width: min-content;
 	}
+
+	@media (min-width: 593px) {
+		.preview {
+			max-width: calc(100% - 32px);
+		}
+	}
 </style>
