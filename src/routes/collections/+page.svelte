@@ -2,10 +2,10 @@
 	import { onMount } from 'svelte';
 	import {
 		Collection,
-		List,
-		ListRow,
-		ListRowImage,
-		ListRowToggleTrailing,
+		Version26List,
+		Version26ListRow,
+		Version26ListRowImage,
+		Version26ListRowToggleTrailing,
 		Version26SegmentedControl,
 		Version26SegmentedControlButton
 	} from 'apple-svelte';
@@ -52,26 +52,26 @@
 {#if panel === 'preview'}
 	<hr />
 	<Collection>
-		<List showHeader showFooter>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowToggleTrailing slot="trailing" showAccentColor state="default" />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowToggleTrailing slot="trailing" showAccentColor />
-			</ListRow>
-		</List>
-		<List showHeader showFooter>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowToggleTrailing slot="trailing" state="default" />
-			</ListRow>
-			<ListRow>
-				<ListRowImage slot="image" type="symbol" />
-				<ListRowToggleTrailing slot="trailing" />
-			</ListRow>
-		</List>
+		<Version26List showHeader showFooter>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowToggleTrailing slot="trailing" showAccentColor state="default" />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowToggleTrailing slot="trailing" showAccentColor />
+			</Version26ListRow>
+		</Version26List>
+		<Version26List showHeader showFooter>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowToggleTrailing slot="trailing" state="default" />
+			</Version26ListRow>
+			<Version26ListRow>
+				<Version26ListRowImage slot="image" type="symbol" />
+				<Version26ListRowToggleTrailing slot="trailing" />
+			</Version26ListRow>
+		</Version26List>
 	</Collection>
 {:else if panel === 'code'}
 	<Code {code} />
