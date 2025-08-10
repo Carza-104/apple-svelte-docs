@@ -449,30 +449,32 @@
 		<Version26Button symbol="visibility" label="Show sidebar" onPress={handlePress} />
 	{/if}
 
-	<Version26Sidebar bind:state style="position: relative; border-radius: 10px; z-index: 0">
-		<Version26SidebarNavigationBar>
-			<Version26SidebarNavigationBarLeading slot="leading" />
-			<Version26SidebarNavigationBarTrailing slot="trailing" />
-		</Version26SidebarNavigationBar>
-		<Version26SidebarSection showHeading heading="Home">
-			<Version26SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
-			<Version26SidebarSectionItem showImage showDisclosure>
-				<Version26SidebarSectionItem indentLevel="1" showImage showDisclosure>
-					<Version26SidebarSectionItem indentLevel="2" showImage showDisclosure>
-						<Version26SidebarSectionItem indentLevel="3" showImage showDisclosure>
-							<Version26SidebarSectionItem
-								inputGroup="preview"
-								indentLevel="4"
-								showImage
-								showTrailingSymbol
-							/>
+	<div class="preview">
+		<Version26Sidebar bind:state style="position: relative; z-index: 0">
+			<Version26SidebarNavigationBar>
+				<Version26SidebarNavigationBarLeading slot="leading" />
+				<Version26SidebarNavigationBarTrailing slot="trailing" />
+			</Version26SidebarNavigationBar>
+			<Version26SidebarSection showHeading heading="Home">
+				<Version26SidebarSectionItem inputGroup="preview" showImage showTrailingSymbol />
+				<Version26SidebarSectionItem showImage showDisclosure>
+					<Version26SidebarSectionItem indentLevel="1" showImage showDisclosure>
+						<Version26SidebarSectionItem indentLevel="2" showImage showDisclosure>
+							<Version26SidebarSectionItem indentLevel="3" showImage showDisclosure>
+								<Version26SidebarSectionItem
+									inputGroup="preview"
+									indentLevel="4"
+									showImage
+									showTrailingSymbol
+								/>
+							</Version26SidebarSectionItem>
 						</Version26SidebarSectionItem>
 					</Version26SidebarSectionItem>
 				</Version26SidebarSectionItem>
-			</Version26SidebarSectionItem>
-			<Version26SidebarSectionAddItemButton />
-		</Version26SidebarSection>
-	</Version26Sidebar>
+				<Version26SidebarSectionAddItemButton />
+			</Version26SidebarSection>
+		</Version26Sidebar>
+	</div>
 {:else if panel === 'code'}
 	<Code {code} />
 {:else}
@@ -612,3 +614,10 @@
 		</div>
 	</div>
 {/if}
+
+<style>
+	.preview {
+		border-radius: 26px;
+		overflow: hidden;
+	}
+</style>
